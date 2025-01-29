@@ -45,7 +45,9 @@ c++ 프로그래밍 언어는 엔티티의 이름을 식별자(identifier)
 
 식별자는 키워드, 미리 정의된 식별자, 사용 정의 식별자로 구분할 수 있음. 
 
-lowerValue, upperValue, timeOfWithdraw등으로 사용하고, lower_value처럼 언더스코어로 그분된 식별자도 있지만 일반적은 프로그램에서 이를 사용하지 않는 것을 권장함.  
+lowerValue, upperValue, timeOfWithdraw등으로 사용하고, lower_value처럼 언더스코어로 구분된 식별자도 있지만 일반적으로 프로그램에서 
+
+이를 사용하지 않는 것을 권장함.  
 
 키워드는 미리 예약된 식별자, 재정의가 불가능하다.  
 
