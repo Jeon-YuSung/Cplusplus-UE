@@ -11,3 +11,8 @@
 
 즉, 표현식과 표현식을 사용해서 새로운 표현식을 만들 수 있음 
 
+
+### lvalue와 rvalue
+할당 연산자 왼쪽에 놓는 엔티티는 lvalue<br>
+오른쪽 엔티티는 rvalue 
+즉 값의 목적지는 lvalue, 값의 소스는 rvalue
