@@ -184,7 +184,7 @@ while(조건)**;**
     return 구문은 현재 함수를 종료하고, 함수를 호출한 쪽으로 제어를 리턴 <br>
     반복문에서 리턴을 사용하면 반복문이 종료되며 동시에 반복문이 소속된 함수도 종료됨 <br>
 
-    5-17_Program 코드 참고
+    [5-17_Program 코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter5/5-17_Program.cpp)
     소수는 자기 자신과 1로만 나눌수 있는 수고, 복합수는 소수와 1이 아닌 수임<br>
     CS에서 소수는 중요하게 사용됨 <br>
 
