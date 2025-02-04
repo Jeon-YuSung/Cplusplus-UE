@@ -12,12 +12,12 @@ int main (void){
 
   switch(grade){
     
-    case "A" : 
-  case "B" : 
-  case "C" : 
+    case 'A' : 
+  case 'B' : 
+  case 'C' : 
       cout << " pass 입니다 " << endl;
-  case "D" : 
-  case "F" : 
+  case 'D' : 
+  case 'F' : 
       cout << "non-pass (fail) 입니다 " << endl;
   default :
     cout << "입력 오류, 시도 하세요 " << endl;
