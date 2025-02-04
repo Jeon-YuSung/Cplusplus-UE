@@ -11,7 +11,7 @@ fun 함수는 y로 참조를 전달 받음
 따라서  y는 함수 호출 때 argument의 별칭이 됨 
 매개변수를 변경하면 argumnet가 함께 변함
 */
-int fun(int &y){
+void fun(int &y){
 
   y++;
   cout << "fun 함수 내부의 y = " << y << endl; 
