@@ -28,7 +28,7 @@ void swap(int &fir, int &sec){
 
   int temp;
   temp = fir;
-  fir = snd;
-  snd = temp;
+  fir = sec;
+  sec = temp;
   return;
 }
