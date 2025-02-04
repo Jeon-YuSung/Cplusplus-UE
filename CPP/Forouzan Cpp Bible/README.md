@@ -11,7 +11,7 @@
 ### C++ 프로그래밍 기본 
 Chapter1. 컴퓨터와 프로그래밍 언어 
 
-Chapter2. C++ 프로그래밍 기본
+(Chapter2. C++ 프로그래밍 기본)[https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter2]
 
 Chapter3. 표현식과 문장 
 
