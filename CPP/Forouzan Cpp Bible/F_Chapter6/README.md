@@ -139,12 +139,12 @@ side-effects를 일으키지만 리턴 값을 리턴하지 않음, 함수가 sid
 
 호출되는 함수에 매개변수가 존재한다면, 함수 호출 때의 값(argument)이 호출되는 함수의 매개변수(parameter)로 전달 됨<br>
 자료 전달은 <br> 
-**값으로 전달(pass-by-value)** <br>
-**참조로 전달(pass-by-reference)** <br>
+**값으로 전달(pass-by-value or callByValue)** <br>
+**참조로 전달(pass-by-reference or callByValue)** <br>
 **포인터로 전달(pass-by-pointer)** <br>
 의 3가지 매커니즘으로 구분함 
 
-+ **값으로 전달(pass-by-value)** <br>
++ **값으로 전달(pass-by-value or callByValue)** <br>
 pass-by-value 매커니즘에서는 인수(argument)의 값이 복사되어서 매개변수(parameter)에 할당됨. <br>
 값을 기반으로 자료가 전달되므로, 인수(argument)는 리터럴 또는 변수의 값이 됨 <br>
 pass-by-value는 호출되는 함수 쪽에서 argument를 변경하지 않게 만들고 싶을 때 사용 <br>
@@ -159,7 +159,7 @@ pass-by-value의 매커니즘은 매우 간단하고, 호출되는 함수 쪽에
 (대신 pass-by-reference 또는 pass-by-pointer로 사용한다)
 
 
-+ **참조로 전달(pass-by-reference)** <br>
++ **참조로 전달(pass-by-reference or callByReference)** <br>
 pass-by-reference는 argument와 parameter는 메모리 위치를 공유함. <br>
 즉, 각각의 함수에서 변수의 이름은 다를 수 있지만, 양쪽 함수 모두에서 같은 메모리 위치에 접근해서 값을 읽거나 쓸 수 있음. <br>
 
@@ -179,4 +179,42 @@ pass-by-reference는 호출되는 함수쪽에서 매개변수를 변경해서, 
 argument와 parameter의 이름은 다를 수 있지만 같은 메모리 위치를 나타냄 <br> 
 따라서 큰 객체를 전달할 때에는 pass-by-reference를 사용 함. <br> 
 
-+ **포인터로 전달(pass-by-pointeR)** <br>
++ **포인터로 전달(pass-by-pointer)** <br>
+
+pass-by-pointer는 argument로 메모리 주소를 parameter로 전달하는 것 <br>
+주소를 전달하므로, 매개변수를 사용해서 argument의 메모리 위치에 접근할 수 있음<br> 
+
+<비고>
+C언어에서는 pass-by-reference가 아예 존재하지 않아서, argumnet를 조작하려면 포인터로 pass-by-pointer를 무조건 사용해야 함. <br> 
+C++에서는 pass-by-reference가 있어서, pass-by-pointer를 많이 사용하지 않지만, 일부 상황에서는 사용. <br>
+pass-by-pointer는 pass-by-reference와 같은 장점을 가지고 있음 <br> 
+일반적으로 C++에서는 많이 사용하지 않지만, 전달해야 하는 자료가 포인터의 특성(ex : C언어 문자열, 배열 등)을 갖고 있을 경우에는 pass-by-pointer를 사용함.
+
+#### 자료 리턴
+void 함수에 side-effects을 위해 사용. <br> 
+void 함수는 아무것도 리턴하지 않음, 반면 void 함수가 아니라면, 어떤 값을 리턴해야함
+리턴 값의 종류에 따라 <br>
+**값으로 리턴 (return-by-value)** <br>
+**참조로 리턴 (return-by-reference)** <br>
+**포인터로 리턴 (return-by-pointer)** <br>
+라고 3가지 매커니즘으로 나눌 수 있음. 
+
++ **값으로 리턴 (return-by-value)** <br>
+가장 일반적으로 사용되는 매커니즘으로, 호출되는 함수 쪽에서 어떤 표현식을 생성하고, 이를 리턴함. <br>
+함수를 호출하면 값이 리턴되므로, 값이 필요한 위치에 함수를 활용함 <br>
+
+[6-16.cpp코드 참고]()
+
++ **참조로 리턴 (return-by-reference)** <br>
+C++를 절차 지향 매커니즘으로 사용할 때는 일반적으로 return-by-value를 함께 사용함 <br>
+return-by-value는 쉬워, 이해하기 쉽지만 값을 복사해서 리턴함 <br>
+일반적인 내장 자료형에서는 큰 문제가 없음. 하지만 객체지향 프로그래밍 매커니즘에서는 크키가 큰 객체를 리턴해야 하는 경우가 있음 <br>
+**이때 복사로 인해서 발생하는 비용을 줄이려면, return-by-reference를 사용하는 것이 좋음** <br>
+다만, 호출되는 함수에서 객체를 생성하면, 함수가 종료된 이후에 객체가 사라짐 <br>
+그래서  return-by-reference를 사용할 때에는 여러 주의사항을 지켜야 함. 
+
++ **포인터로 리턴 (return-by-pointer)** <br>
+return-by-reference와 효과가 같지만 거의 사용하지 않는다.
+
+-----------------
+### 6.5 parameter와 함수 오버로딩
