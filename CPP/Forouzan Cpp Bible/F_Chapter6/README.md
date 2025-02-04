@@ -151,7 +151,7 @@ pass-by-value는 호출되는 함수 쪽에서 argument를 변경하지 않게 �
 즉, 이 매커니즘에서 호출되는 함수는 argument의 값을 **읽기**만 할 수 있다는 것임. <br>
 이를 "읽기 전용 접근 (read-only access)라고도 표현함
 
-(6-13.cpp 코드 참고)[]
+[6-13.cpp 코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-13.cpp)
 
 pass-by-value의 매커니즘은 매우 간단하고, 호출되는 함수 쪽에서 argument를 조작하지 않게 차단을 함 <br>
 하지만, argument의 값을 복사해서 parameter에 전달하므로 전달해야하는 값의 크기가 작다면 괜찮지만, 반대로 값의 크기가 크다면 복사하는 작업이 무거워질 수 있음. <br> 
@@ -163,7 +163,7 @@ pass-by-value의 매커니즘은 매우 간단하고, 호출되는 함수 쪽에
 pass-by-reference는 argument와 parameter는 메모리 위치를 공유함. <br>
 즉, 각각의 함수에서 변수의 이름은 다를 수 있지만, 양쪽 함수 모두에서 같은 메모리 위치에 접근해서 값을 읽거나 쓸 수 있음. <br>
 
-(6-14.cpp코드 참고)[]
+[6-14.cpp코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-14.cpp)
 
 예를 들어 친구에게 편지를 검토해달라고 할 때, 종이에 작성한 편지를 전달하면 원본 편지를 공유하게 된다. 그리고 친구가 편지를 모두 검토하고 수정한 뒤 돌려주면, 본인이 최종적으로 갖는 편의 내용도 변경된다. <br>
 또 다른 표현으로 "읽고 쓸 수 있는 접근 (read-write access)라고도 표현함. <br>
@@ -192,7 +192,7 @@ pass-by-pointer는 pass-by-reference와 같은 장점을 가지고 있음 <br>
 
 #### 자료 리턴
 void 함수에 side-effects을 위해 사용. <br> 
-void 함수는 아무것도 리턴하지 않음, 반면 void 함수가 아니라면, 어떤 값을 리턴해야함
+void 함수는 아무것도 리턴하지 않음, 반면 void 함수가 아니라면, 어떤 값을 리턴해야함 <br>
 리턴 값의 종류에 따라 <br>
 **값으로 리턴 (return-by-value)** <br>
 **참조로 리턴 (return-by-reference)** <br>
@@ -203,7 +203,7 @@ void 함수는 아무것도 리턴하지 않음, 반면 void 함수가 아니라
 가장 일반적으로 사용되는 매커니즘으로, 호출되는 함수 쪽에서 어떤 표현식을 생성하고, 이를 리턴함. <br>
 함수를 호출하면 값이 리턴되므로, 값이 필요한 위치에 함수를 활용함 <br>
 
-[6-16.cpp코드 참고]()
+[6-16.cpp코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-16.cpp)
 
 + **참조로 리턴 (return-by-reference)** <br>
 C++를 절차 지향 매커니즘으로 사용할 때는 일반적으로 return-by-value를 함께 사용함 <br>
