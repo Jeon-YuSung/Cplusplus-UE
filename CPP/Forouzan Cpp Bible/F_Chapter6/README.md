@@ -136,3 +136,47 @@ side-effects를 일으키지만 리턴 값을 리턴하지 않음, 함수가 sid
 
 -----------------------------
 ### 6.4 자료 교환
+
+호출되는 함수에 매개변수가 존재한다면, 함수 호출 때의 값(argument)이 호출되는 함수의 매개변수(parameter)로 전달 됨<br>
+자료 전달은 <br> 
+**값으로 전달(pass-by-value)** <br>
+**참조로 전달(pass-by-reference)** <br>
+**포인터로 전달(pass-by-pointer)** <br>
+의 3가지 매커니즘으로 구분함 
+
++ **값으로 전달(pass-by-value)** <br>
+pass-by-value 매커니즘에서는 인수(argument)의 값이 복사되어서 매개변수(parameter)에 할당됨. <br>
+값을 기반으로 자료가 전달되므로, 인수(argument)는 리터럴 또는 변수의 값이 됨 <br>
+pass-by-value는 호출되는 함수 쪽에서 argument를 변경하지 않게 만들고 싶을 때 사용 <br>
+즉, 이 매커니즘에서 호출되는 함수는 argument의 값을 **읽기**만 할 수 있다는 것임. <br>
+이를 "읽기 전용 접근 (read-only access)라고도 표현함
+
+(6-13.cpp 코드 참고)[]
+
+pass-by-value의 매커니즘은 매우 간단하고, 호출되는 함수 쪽에서 argument를 조작하지 않게 차단을 함 <br>
+하지만, argument의 값을 복사해서 parameter에 전달하므로 전달해야하는 값의 크기가 작다면 괜찮지만, 반대로 값의 크기가 크다면 복사하는 작업이 무거워질 수 있음. <br> 
+즉, 객체지향 프로그래밍에서는 객체의 크기가 클 때, pass-by-value 매커니즘을 사용하지 않음 <br> 
+(대신 pass-by-reference 또는 pass-by-pointer로 사용한다)
+
+
++ **참조로 전달(pass-by-reference)** <br>
+pass-by-reference는 argument와 parameter는 메모리 위치를 공유함. <br>
+즉, 각각의 함수에서 변수의 이름은 다를 수 있지만, 양쪽 함수 모두에서 같은 메모리 위치에 접근해서 값을 읽거나 쓸 수 있음. <br>
+
+(6-14.cpp코드 참고)[]
+
+예를 들어 친구에게 편지를 검토해달라고 할 때, 종이에 작성한 편지를 전달하면 원본 편지를 공유하게 된다. 그리고 친구가 편지를 모두 검토하고 수정한 뒤 돌려주면, 본인이 최종적으로 갖는 편의 내용도 변경된다. <br>
+또 다른 표현으로 "읽고 쓸 수 있는 접근 (read-write access)라고도 표현함. <br>
+호출되는 함수에서 argument를 읽고 쓸 수 있음. <br> 
+대표적인 예시가 swap임 <br> 
+스왑은 정렬을 포함한 수많은 알고리즘에서 사용되고, 다양한 알고리즘에서 여러 번 활용하는 기능이기에 함수로 만들어서 사용할 가치가 있음 <br>
+그런데 pass-by-value 매커니즘을 사용하면 원본(argument)에 접근할 수 없으므로 함수 호출로 스왑할 수 없음. <br>
+따라서 paas-by-reference를 사용해서 원본 값을 조작해야함 <br>
+
+pass-by-reference는 호출되는 함수쪽에서 매개변수를 변경해서, 호출한 함수 쪽의 원본(argument)를 변경할 수 있음. <br> 
+즉, 스왑등을 구현할 때 가장 좋은 선택지임. <br>
+또한 **복사가 필요하지 않다**는 장점이 있음 <br>
+argument와 parameter의 이름은 다를 수 있지만 같은 메모리 위치를 나타냄 <br> 
+따라서 큰 객체를 전달할 때에는 pass-by-reference를 사용 함. <br> 
+
++ **포인터로 전달(pass-by-pointeR)** <br>
