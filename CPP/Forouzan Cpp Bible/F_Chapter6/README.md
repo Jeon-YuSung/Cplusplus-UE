@@ -115,7 +115,7 @@ side-effects를 일으키지만 리턴 값을 리턴하지 않음, 함수가 sid
  일반적으로 함수 내부에서 입력을 받고 이를 리턴, "입력-처리-출력"이라는 설계에서 입력 부분에 많이 사용됨. <br>
 
  * 매개변수와 리턴값이 있는 함수 <br>
-   (코드6-11참고)
+   [코드6-11참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-11.cpp)
 
 #### 사용자 정의 함수 선언 
 
