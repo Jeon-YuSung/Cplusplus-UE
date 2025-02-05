@@ -229,7 +229,7 @@ ex) int test(int a, int b, int c, int d)라는 함수 선언이 있다면 defaul
 컴파일러에게 함수를 어떤 형태로 사용하라고 알려줘야 하므로, 함수 선언을 앞에 두고 둬ㅣ에 함수 정의를 두는 경우에는 함수 선언 부분(앞 부분)에 default parameter를 사용 함 <br>
 (함수 선언과 정의를 나누어서 하는 경우, 함수 정의 부분에는 default parameter를 넣으면 안됨 -> 오류가 발생함) <br>
 
-[6-18.cpp 코드 참고]()
+[6-18.cpp 코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-18.cpp)
 
 #### 함수 오버로딩 
 
@@ -242,7 +242,7 @@ A. 매개변수(매개변수의 자료형, 개수, 순서)가 다르면 가능�
 이름이 같은 함수라도 함수 시그니처가 다르다면, 호출 시점에 컴파일러가 자신이 어떤 함수를 호출해야 하는지 구분할 수 있음  <br>
 다만, 함수 호출 시점에는 리턴값을 어떤 자료형으로 활용할지 컴파일러가 구분할 수 없으므로, 리턴 자료형은 함수 시그니처에 포함되지 않음. 
 
-[6-19.cpp 코드 참고]()
+[6-19.cpp 코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-19.cpp)
 
 
 --------------------
@@ -304,7 +304,7 @@ cout << sum << endl;
 즉, 내부 블록에서 외부 블록에서 있는 엔티티와 같은 이름으로 엔티티를 선언하면, 외부 블록에 있는 엔티티를 사용할 수 없음. <br>
 외부 블록의 엔티티는 내부 블록이 종료된 이후에 사용할 수 있음. 
 
- [6-20 코드 참고]()
+ [6-20 코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-20.cpp)
  
 * ##### 전역 스코프 (Global Scope)
 
@@ -335,7 +335,7 @@ cout << sum << endl;
 
 전역 스코프를 가장 넓은 스코프라고 보면, 쉐도잉이 전역 스코프에도 적용한다는 걸 쉽게 알 수 있음 <br> 
 
-[6-21코드참고]()
+[6-21코드참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-21.cpp)
 
 + 범위 해결 연산자 (Scope Resolution Operator)
 
@@ -348,7 +348,7 @@ cout << sum << endl;
  '       ::(객체) 이름'의 형태는 스코프가 프로그램의 Global Scope로 암묵적으로 지정됨 <br>
   '스코프 ::(객체) 이름'의 어떤 스코프의 엔티티인지를 나타냄 <br>
 
-  [6-22 코드참고]()
+  [6-22 코드참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-22.cpp)
 
 * #### 함수와 관련된 스코프
 
@@ -381,7 +381,7 @@ C++은 정적(Static) 변경자를 3가지 상황에 사용할 수 있음. <br>
 **한 번만 초기화**되고 프로그램이 실행되고 있는동안, 프로그램은 메모리 위의 변수를 추적함.  <br>
 따라서 함수를 여러 번 호출하면, 모든 함수들이 같은 변수를 공유함.
 
-[6-23코드 참고]()
+[6-23코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-23.cpp)
 
   + 초기화
     위에서 본 변수의 종류(전역 변수, 자동 지역 변수, 정적 지역변수)의 초기화를 비교해봅시다. <br>
@@ -389,5 +389,5 @@ C++은 정적(Static) 변경자를 3가지 상황에 사용할 수 있음. <br>
     반면, Global variable과 static local variable는 초기화하지 않으면, 기본 값(정수는 0, 부동 소수점은 0.0, 불은 false)로 초기화됨. <br>
     즉, 전역변수와 정적 지역변수는 같은 형태로 초기화 된다.
 
-    [6-24코드 참고]()
+    [6-24코드 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6/6-24.cpp)
    
