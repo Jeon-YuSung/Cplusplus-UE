@@ -73,6 +73,6 @@ cout << "기간 : " << term << "년" << endl << endl;
 
 void printResult(double multiplier, double futureValue){
 cout << "투자의 승수 = " << fixed << setprecision(2) << multiplier << endl;
-  cout << "미래 갗이 = " <<fixed << setprecision(2) << futureValue << endl;
+  cout << "미래 가치 = " <<fixed << setprecision(2) << futureValue << endl;
   
 }
