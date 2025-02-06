@@ -22,7 +22,7 @@ Chapter1. 컴퓨터와 프로그래밍 언어
 [Chapter6. 함수](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter6) 
 
 ### 객체지향의 기본 및 객체지향 확장  
-Chapter7. 클래스와 생성자 
+[Chapter7. 클래스와 생성자](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7)
 
 Chapter8. 배열  
 
