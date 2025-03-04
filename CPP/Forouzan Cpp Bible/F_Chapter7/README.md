@@ -154,6 +154,7 @@ C++은 값을 접근하기위해, private, protected, public이라는 3가지 �
 
 멤버 함수는 단순하게 함수의 프로토타입을 적은 것으로, 별도의 정의가 필요함. <br>
 Example) <br>
+```cpp
 doulbe Circle::getRadius() const{
 
 return radius;
@@ -166,7 +167,7 @@ const double PI = 3.14; <br>
 return(PI * radius * radius);
 
 }
-
+```
 기본적인 함수 정의와 비슷하지만 2가지 차이점이 있음. <br>
 먼저 멤버 함수에는 한정자(Const)가 있다는 것임. <br>
 두 번째는 멤버 함수에는 앞에 클래스 이름이 붙는다는 것임. <br>
@@ -183,7 +184,7 @@ return(PI * radius * radius);
   반대로 개발자가 인라인 함수로 만들 수 없는 정도의 내용을 인라인 함수로 강제로 만들면, 이를 무시하기도 함. <br>
 
   + **암묵적 인라인 함수**
-
+```cpp
   class Circle{
 
 private:
@@ -197,7 +198,7 @@ private:
   ....
   
   }
-
+```
   위의 코드처럼, 클래스 정의 내부에 함수를 정의하면, 해당 함수는 인라인 함수가 됨. <br>
   하지만 함수 정의 부분을 읽기 어렵고, 캡슐화 원칙을 위반했기 때문에 추천하지 않음. <br>
   클래스 정의 내부에 함수 정의를 넣었으므로, 이 함수의 정의를 외부에 따로 정의할 필요가 없음. <br>
@@ -205,8 +206,9 @@ private:
   + **명시적 인라인 함수**
   + 
 함수 정의 앞에 inline 키워드를 추가하면 함수를 명시적 인라인 함수로 만들 수 있음. <br>
+``` 
 inline double getRadius() const {return radius;}
-
+```
 #### 애플리케이션
 
 클래스 정의와 멤버 함수를 정의 했으므 로, 메인 함수 부분(애플리케이션 부분)에서 이를 인스턴스화 해야 함. <br> 
@@ -214,7 +216,9 @@ inline double getRadius() const {return radius;}
 + **객체 인스턴스화**
   
   멤버 함수를 사용하려면, 객체를 인스턴스화 해야함. <br>
-  Circle circle1; <br>
+  ```
+  Circle circle1;
+  ```
   위의 코드를 실행하면 circle1이라는 객체가 만들어짐. <br>
   하지만, 객체 내부에 있는 double 자료형의 radius라는 데이터 멤버(변수)를 초기화하지 않았으므로, 이 데이터 멤버에는 쓰레기 값이 들어감. <br>
   따라서 사용하기 전에 데이터 멤버를 초기화 해줘야 함.
@@ -222,15 +226,18 @@ inline double getRadius() const {return radius;}
 + **객체에 연산적용**
 
   인스턴스화했다면 멤버 함수로 정의 했던 연산을 사용할 수 있게됨.<br>
-  circle1.setRadious(10.0);<br>
+```
+   circle1.setRadious(10.0);<br>
    cout << "radius : " << circle1.getRadius() <<endl;
-  
+  ```
 + **멤버 선택**
   
   객체 이름과 멤버 함수 사이에 점(.)이 찍혀있는데, 이는 멤버 선택 연산자 (member selection operator)라고 부르는 연산자임. <br>
-  circle1.getRadius(); <br>
-  circle2.getRadius(); <br>
-  
+```
+  circle1.getRadius(); 
+  circle2.getRadius(); 
+  ```
+
 #### 구조체 
 
 구조체의 모든 멤버는 기본적으로 public <br>
@@ -270,7 +277,8 @@ inline double getRadius() const {return radius;}
 생성자는 이전에 설명 했던 것처럼 리턴값이 없고, 이름이 클래스 이름과 동일해야 함. <br>
 데이터 멤버를 초기화하는 변경 작업을 하기 때문에 const한정자를 붙일 수 없음. <br>
 
-예시 : <br>
+예시 : 
+```cpp
 class Circle{
 
 ... <br>
@@ -280,7 +288,7 @@ public: <br>
  Circle(const Circle& circle);// 복사 생성자 <br>
 .... <br>
 }
-
+```
 + **매개변수가 있는 생성자 (Parameter Constructor)** <br> 
   일반적으로 데이터 멤버를 지정된 값으로 초기화 하기 위해서 사용 <br>
   오버로드할 수 있으므로, 시그니처가 다르면서 여러 개의 Parameter가 있는 생성자를 가질 수 있음. <br>
@@ -310,13 +318,14 @@ public: <br>
 초기화 리스트는 헤더 뒤와 본문 사이에 넣으며 콜론(:)로 시작함 <br>
 여러 개의 데이터 멤버를 초기화할 때는 각가의 데이터 멤버를 쉼표로 구분해서 초기화해야함. 
 
- Circle::Circle(double radius) //매개변수가 있는 생성자 <br>
- : radius(rds){ ... }  <br>
-  Circle::Circle() //기본 생성자 <br>
-  : rdaius(1.0){...} <br>
- Circle::Circle(const Circle& cr) // 복사 생성자 <br> 
- : radius(cr.radius) {....} <br>
-
+``` cpp
+ Circle::Circle(double radius) //매개변수가 있는 생성자 
+ : radius(rds){ ... }  
+  Circle::Circle() //기본 생성자 
+  : rdaius(1.0){...} 
+ Circle::Circle(const Circle& cr) // 복사 생성자 
+ : radius(cr.radius) {....} 
+```
 형식을 간단하게 정리한 것 <br>
 : 데이터_멤버(매개변수,....,데이터_맴버(매개변수) 
 
@@ -336,15 +345,17 @@ public: <br>
    따라서 이러한 상황에 소멸자를 유용하게 활용 할수 있음.<br>
    소멸자는 별도의 매개변수를 가잘수 없으므로  오버로드 할수 없음. <br>
 
-   + **소멸자 선언**<br>ㄹ
-   예시 : <br>
+   + **소멸자 선언**<br>
+   예시 :
+```cpp
    class Circle{
 
-... <br>
-public: <br>
- .....<br>
- ~Circle(); //소멸자  <br>
+... 
+public: 
+ .....
+ ~Circle(); //소멸자  
 }
+```
 
    + **소멸자 정의**<br>
    소멸자도 다른 멤버 함수처럼 정의 <br>
