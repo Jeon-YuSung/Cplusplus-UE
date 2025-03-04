@@ -51,7 +51,7 @@ if(조건식);
 아니면 else문을 실행함 
 
 ### 중첩 if-else문 
-조건문 안에 조건문을 넣어 중첩 if-else문을 만들 수 있음.  (4-6코드참고)[https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter4/4-6_Program.cpp]
+조건문 안에 조건문을 넣어 중첩 if-else문을 만들 수 있음.  [4-6코드참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter4/4-6_Program.cpp)
 
 -----------
 ### 4.3 논리 표현식 
@@ -104,7 +104,7 @@ break는 프로그램의 흐름을 중지하고 스위치문을 끝마치게하�
 default는 스위치문의 마지막 부분에서만 한 번 사용 가능하고, 입력이 잘 못되었다는 것을 감지할 때도 활용함.
 
 ### 분기 결합
-case분기에서 실행하는 하는 작ㅇ덥이 같다면 분기를 결합해서 활용할수 있음.<br>
+case분기에서 실행하는 하는 작업이 같다면 분기를 결합해서 활용할수 있음.<br>
 즉, 스위치문이 case분기에 진입하면 break구문을 만나기전 까지의 모든 문장을 실행하기 때문에 분기 결합을 사용할 수 있음. 
 
 -------------
@@ -113,7 +113,7 @@ case분기에서 실행하는 하는 작ㅇ덥이 같다면 분기를 결합해�
 조건 분기를 할 때, 사용할 수 있는 코드로 조건부 표현식(conditional expression)이 있음. <br>
 C++에서 유일한 삼항 연산자, 삼항 연산자는 피연사자를 3개(조건,표현식1,표현식2)를 사용하는 연산자임. <br>
 
-조건?표현식1:표현식2
+**조건?표현식1:표현식2**
 
 조건은 true or false 값으로 변환될 수 있는 표현식이여야함 <br> 
 true면 표현식1, false면 표현식2가 나옴
