@@ -361,7 +361,7 @@ public:
 소멸자는 **public**을 적용해야함 <br>
 
 ```cpp
-Circle::~Circle(){....} <br>
+Circle::~Circle(){....} 
 ```
 
 #### 생성자와 소멸자의 호출. <br>
