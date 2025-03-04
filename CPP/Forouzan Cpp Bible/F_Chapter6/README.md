@@ -62,7 +62,8 @@ parameter는 함수 정의에 있는 변수 선언을 뜻하고, argument는 함
 parameter의 초기화는 함수 호출할 때 내부적으로 일어남. <br> 
 argument는 변수 또는 객체가 될 수 있음, 하지만 함수 호출 때는 내부의 값만 활용됨.
 
- 예시 ex)  ```cpp
+ 예시 ex)  
+ ```cpp
  int main(){ 
  ... <
   fun(5); // 함수 호출에서 5가 argument 
