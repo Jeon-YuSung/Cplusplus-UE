@@ -83,7 +83,7 @@ instance == 인스턴스 또는 객체 <br>
 하지만, 일반적으로 클래스 이름의 경우는 대문자로 시작하게 만들어 소문자로 시작하는 라이브러리 클래스와 구분하는 것이 좋음. <br>
 
 **클래스 작성 예시**
-'''cpp
+```cpp
 class Circle { //헤더 
 
 private: <br>
@@ -96,7 +96,7 @@ double getArea() const; <br>
 double getPerimeter() const; <br>
 double setRadius(double value); <br> 
 };
-'''
+```
 + **데이터 멤버 선언**
   
   클래스의 정의의 첫 번째 부분은 데이터 멤버를 선언하는 부분임 <br>
