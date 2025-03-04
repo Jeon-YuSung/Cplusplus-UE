@@ -51,7 +51,7 @@ if(조건식);
 아니면 else문을 실행함 
 
 ### 중첩 if-else문 
-조건문 안에 조건문을 넣어 중첩 if-else문을 만들 수 있음.  코드참고
+조건문 안에 조건문을 넣어 중첩 if-else문을 만들 수 있음.  (4-6코드참고)[https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter4/4-6_Program.cpp]
 
 -----------
 ### 4.3 논리 표현식 
