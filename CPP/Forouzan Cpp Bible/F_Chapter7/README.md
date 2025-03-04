@@ -86,15 +86,15 @@ instance == 인스턴스 또는 객체 <br>
 ```cpp
 class Circle { //헤더 
 
-private: <br>
+private: 
 double radius; //데이터 멤버 선언
 
-// 멤버 함수 선언 <br> 
-public: <br>
-double getRadius() const; <br>
-double getArea() const; <br>
-double getPerimeter() const; <br>
-double setRadius(double value); <br> 
+// 멤버 함수 선언 
+public: 
+double getRadius() const; 
+double getArea() const; 
+double getPerimeter() const; 
+double setRadius(double value); 
 };
 ```
 + **데이터 멤버 선언**
@@ -206,7 +206,7 @@ private:
   + **명시적 인라인 함수**
   + 
 함수 정의 앞에 inline 키워드를 추가하면 함수를 명시적 인라인 함수로 만들 수 있음. <br>
-``` 
+```cpp
 inline double getRadius() const {return radius;}
 ```
 #### 애플리케이션
@@ -216,7 +216,7 @@ inline double getRadius() const {return radius;}
 + **객체 인스턴스화**
   
   멤버 함수를 사용하려면, 객체를 인스턴스화 해야함. <br>
-  ```
+  ```cpp
   Circle circle1;
   ```
   위의 코드를 실행하면 circle1이라는 객체가 만들어짐. <br>
@@ -226,14 +226,14 @@ inline double getRadius() const {return radius;}
 + **객체에 연산적용**
 
   인스턴스화했다면 멤버 함수로 정의 했던 연산을 사용할 수 있게됨.<br>
-```
+```cpp
    circle1.setRadious(10.0);<br>
    cout << "radius : " << circle1.getRadius() <<endl;
   ```
 + **멤버 선택**
   
   객체 이름과 멤버 함수 사이에 점(.)이 찍혀있는데, 이는 멤버 선택 연산자 (member selection operator)라고 부르는 연산자임. <br>
-```
+```cpp
   circle1.getRadius(); 
   circle2.getRadius(); 
   ```
