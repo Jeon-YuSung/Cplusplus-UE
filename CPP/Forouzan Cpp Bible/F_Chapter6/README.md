@@ -65,7 +65,7 @@ argument는 변수 또는 객체가 될 수 있음, 하지만 함수 호출 때�
  예시 ex)  
  ```cpp
  int main(){ 
- ... <
+ ... 
   fun(5); // 함수 호출에서 5가 argument 
   ... 
  }
