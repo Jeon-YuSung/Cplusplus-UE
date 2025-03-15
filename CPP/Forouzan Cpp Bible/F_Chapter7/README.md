@@ -566,6 +566,7 @@ assert(false);
 assert함수를 사용하려면 **<cassert>헤더 파일**을 읽어 들어야한다. <br> 
 
 [코드7.4 Rectangle 클래스 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-4.cpp)
+
 --------------------------
   ### 7.5 정적 멤버
 
