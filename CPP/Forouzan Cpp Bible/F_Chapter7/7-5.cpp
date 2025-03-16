@@ -1,5 +1,4 @@
 //객체를 만들고, 만들어진 객체의 수를 세는 프로그램 
-
 #include <iostream>
 using namespace std;
 
@@ -25,7 +24,7 @@ int Rectangle::count = 0;
 //클래스 정의
 //매개변수가 있는 생성자 
 Rectangle::Rectangle(double length, double height) 
-: length(len), height(hgt){
+: length(length), height(height){
 count++;
 }
 //기본 생성자 
