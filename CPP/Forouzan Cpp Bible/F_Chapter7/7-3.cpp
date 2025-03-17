@@ -1,7 +1,3 @@
-/*
-주어진 범위의 랜덤한 숫자를 생성하는 클래스를 선언하고 정의하는 프로그램.
-*/
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -16,7 +12,7 @@ private:
   int value;
 
 public:
-  randomInteger(int low, int higt);
+  randomInteger(int low, int high);
 ~ randomInteger();
 // 합성 복사 생성자의 생성 막기 
  randomInteger(const  randomInteger &random) = delete; //복사 생성자를 선언하고, delete키워드를 할당하면 복사 생성자를 만들지 않는다. 
@@ -24,8 +20,8 @@ public:
 };
 
 //생성자   
-randomInteger::randomInteger(int low, int higt)
-:low(lw), high(hh)
+randomInteger::randomInteger(int low, int high)
+
 {
   srand(time(0));
   int temp = rand();
