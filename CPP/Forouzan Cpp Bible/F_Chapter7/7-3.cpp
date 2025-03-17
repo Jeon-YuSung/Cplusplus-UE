@@ -21,8 +21,9 @@ public:
 
 //생성자   
 randomInteger::randomInteger(int low, int high)
-
 {
+  this->low = low;
+  this->high = high;
   srand(time(0));
   int temp = rand();
   value = temp % (high - low + 1) + low;
