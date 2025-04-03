@@ -1,5 +1,5 @@
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#ifndef 7-7_INTERFACE_H
+#define 7-7_INTERFACE_H
 #include <iostream>
 #include <cassert>
 
