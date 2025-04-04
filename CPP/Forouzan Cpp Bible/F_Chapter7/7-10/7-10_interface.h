@@ -12,6 +12,7 @@ int denom;
 //private 보조 멤버 함수
 void normalize();
 int gcd(int n, int m);
+
 public:
   //생성자
 Fraction(int num, int den);
