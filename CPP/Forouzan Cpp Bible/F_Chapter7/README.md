@@ -479,7 +479,9 @@ getRadius(this);
 따라서 어떤 인스턴스 멤버 함수가 실행되는 동안 호스트 객체는 **단 하나**이다. 
 
 + **접근자 멤버 함수**
+  
   **접근자 멤버 함수 (accessor member function)는 호스트 객체의 정보를 추출(get)할 때 사용하는 함수**
+  
   **겟터**(getter)라고도 함. <br>
   추출만 하므로, 객체의 상태를 변경하지는 않는다. 다른 말로 하면 읽기 전용(read-only)함수 <br>
   예를 들어서 Circle 객체의 반지름 값을 리턴하는 인스턴스 멤버 함수가 바로 접근자 인스턴스 멤버 함수이다. <br>
@@ -661,43 +663,50 @@ Rectangle::getCount(); //클래스로 접근
 
 [코드7.5 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-5.cpp)
 
-[코드 7.6참고]()
+[코드 7.6참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7_6.cpp)
 
 -------------------------
 ### 7.6 객체지향 프로그래밍
 
 #### **파일 분할**
+
  C++은 일반적으로 클래스 정의, 멤버 함수 정의, 애플리케이션 3가지 부분으로 코드가 구분 됨.<br>
  따로 만들거나 하나의 파일처럼 만들 수 있음
  
 + **인터페이스 파일**
+  
   클래스 정의(데이터 멤버 선언과 멤버 함수 선언)가 포함된 파일 <br>
   클래스의 형태를 다른 파일 알려주는 역할을 함 <br>
   즉, 구현 파일과 애플리케이션 파일에게 클래스가 어떻게 설계되었는지를 알려줌.<br>
   일반적으로 .h로 즉 헤더파일을 의미함. <br>
   
 + **구현 파일**
+  
   멤버 함수 정의가 포함된 파일. <br>
   인터페이스 파일에는 모든 멤버 함수의 선언을 입력.<br>
   일반적으로 .cpp파일을 의미함 <br>
   
 + **애플리케이션 파일**
+  
   객체를 인스턴스화하고 객체를 활용하는 main함수의 코드가 포함된 파일. <br>
   애플리케이션 파일은 **반드시 cpp확장자**를 사용해야함.<br>
 
 #### **분할 컴파일**
+
 파일을 3개 만들었다면, 모든 파일을 **컴파일**해서 실행 파일을 만들어야 함 <br>
 분할돤 파일을 컴파일하는 것을 **분할 컴파일(separate compilation)** 라고 함<br>
 분할 컴파일 과정은 OS에 상관없이 동일하지만 컴파일 명령어 이름, 생성되는 파일의 이름과 확장자는 환경에 따라서 다를 수 있음. <br>
 
 + **분할 컴파일 과정**
+  
 1. 인터페이스 파일에는 클래스 정의만 작성, 이 파일은 이후에 구현 파일과 애플리케이션 파일에서 읽어 들여야 함. <br>
 (Circle Class라면 인터페이스 파일은 circle.h파일로 만든다) <br>
-2. 구현 파일에서는 include 지시문으로 인터페이스 파일을 읽어 들인다.
+2. 구현 파일에서는 include 지시문으로 인터페이스 파일을 읽어 들인다.<br>
 
 ```cpp
 -c circle.cpp
 ```
+
 컴파일에 성공하면 확장자가 o인 객체 파일이 만들어진다. 
 
 3. 애플리케이션 파일에는 main함수를 작성 <br>
@@ -721,13 +730,16 @@ application
 ```
  
 + **인터페이스 파일 생성**
-[코드 7.7 헤더 파일 참고]() 
+  
+[코드 7.7 헤더 파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-7/7-7_interface.h) 
 
 + **구현 파일 생성**
-  [코드 7.7 구현 파일 참고]()
+  
+  [코드 7.7 구현 파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-7/7-7_circle.cpp)
 
 + **애플리케이션 파일 생성**
-  [코드 7.7 애플리케이션 참고]()
+  
+  [코드 7.7 애플리케이션 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-7/7-7_app.cpp)
 
 + **컴파일, 링크, 실행**
   
@@ -739,7 +751,8 @@ application
   ```
 
 #### **전처리 지시문**
-같은 헤더 파일을 2회 이상 읽으면 컴파일 할 때 오류가 발생함 
+
+같은 헤더 파일을 2회 이상 읽으면 컴파일 할 때 오류가 발생함 <br>
 이러한 상황을 막으려면 **#define, #ifndef, #endif라는 3가지 전처리 지시문(preprocessor directive)** 를 사용 <br>
 
 ```cpp
@@ -776,12 +789,14 @@ ifndef 지시문은 if 조거문과 비슷함. 만약 플래그가 정의되어 
 --------------------------
 ### 7.7 클래스 설계 
  
- [코드 7.10 헤더파일 참고]()
+ [코드 7.10 헤더파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-10/7-10_interface.h)
  
- [코드 7.10 구현파일 참고]()
+ [코드 7.10 구현파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-10/7-10_fraction.cpp)
  
- [코드 7.10 애플리케이션 참고]()
+ [코드 7.10 애플리케이션 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-10/7-10_app.cpp)
 
-  [코드 7.13 헤더 파일 참고]()
-  [코드 7.13 구현 파일 참고]()
-  [코드 7.13 애플리케이션 참고]()
+  [코드 7.13 헤더 파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-13/7-13_interface.h)
+  
+  [코드 7.13 구현 파일 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-13/7-13_time.cpp)
+  
+  [코드 7.13 애플리케이션 참고](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7/7-13/7-13_app.cpp)
