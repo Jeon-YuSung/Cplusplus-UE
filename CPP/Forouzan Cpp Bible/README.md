@@ -24,9 +24,9 @@ Chapter1. 컴퓨터와 프로그래밍 언어
 ### 객체지향의 기본 및 객체지향 확장  
 [Chapter7. 클래스와 생성자](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter7)
 
-Chapter8. 배열  
+[Chapter8. 배열](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter8)  
 
-Chapter9. 참조, 포인터, 메모리 관리
+[Chapter9. 참조, 포인터, 메모리 관리](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter9)
 
 Chapter10. 문자열
 
