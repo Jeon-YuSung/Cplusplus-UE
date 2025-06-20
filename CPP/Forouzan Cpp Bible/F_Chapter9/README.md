@@ -107,7 +107,7 @@ int& a = 201;
 원본 변수를 사용해서 값을 변경할 수 있음, 하지만 참조 변수를 사용해서는 값을 변경할 수 없음.
 
 ```cpp
- const int name =value; 
+ const int name = value; 
  const int &rName = name; //가능
 ```
 원본 변수와 참조 변수 모두 값을 확인할 때만 사용할 수 있고, 값을 변경할 수 없음. <br>
@@ -136,8 +136,167 @@ const 한정자가 붙지 않은 참조 변수에 const 한정자가 붙은 변�
   6장에서 값으로 전달(Pass by Value)을 알아봤었고, 이번에는 참조로 전달(Pass by Reference)에 알아본다.
    이 둘의 차이점은 Pass by Value는 모든 바이트를 복사하는 것이고, Pass by Reference은 메모리 위치를 공유하는 것이다.
 
+  ```cpp
+  #include <iostream>
+  using namespace std;
+
+  void doIt(int); //프로토타입 - 함수 선언
+
+  int main(void){
+   int num = 10;
+   doIt(num);
+   return 0; 
+  }
+
+  void doIt(int num){
+//코드 
+  }```
+
+Pass by Value는 **호출하는 함수 쪽 값(argument)이 호출되는 쪽의 변수(parameter)로 복사 됨**
+
+```cpp
+int num2 = num1; 
+```
+내부적으로는 위의 코드처럼 실행된다고 볼수 있음 
+
+**값으로 전달되는 인수(argumnet)와 매개변수(paramter)가 독립적으로 존재하기 때문에, 매개변수를 변경하는 일이 인수를 변경하는 일에 영향을 주지 않는다.** <br>
+이는 상황에 따라 장단점이 발생 <br>
+값으로 전달에서 문제가 되는 또 다른 부분은 **복사 비용**인데, 복사 대상 객체가 크다면, 인수를 매개변수로 복사할 때, 많은 복사 비용이 들어감.<br>
+즉, 크기가 작은 자료형은 문제가 없지만 클래스처럼 크기가 큰 자료형은 복사할 때는 다른 방법을 고려하는 것이 좋음. 
+
+  ```cpp
+  #include <iostream>
+  using namespace std;
+
+  void doIt(int&); //프로토타입 - 함수 선언
+
+  int main(void){
+   int num = 10;
+   doIt(num);
+   return 0; 
+  }
+
+  void doIt(int& rNum){
+//코드 
+  }
   ```
+
+```cpp
+int& rNum = num;
+```
+pass by reference에서는 내부적으로 위의 코드처럼 바인드가 됨. <br>
+**pass by reference에서 argument와 parameter는 동일한 객체** 그렇기 때문에, 메모리를 추가로 할당하지 않는다. <br>
+const한정자를 붙이지 않았다면, parameter를 조작하는 행위가 argument를 조작하는 행위를 함께 동반한다 <br> 
+또한, 인수와 매개변수가 동일한 객체이기 때문에 따로 복사할 필요가 없어 복사 비용이 발생하지 않는다. 그래서 클래스처럼 큰 객체를 전달할 때 우선적으로 고려하는 것이 좋다. 
+
+Pass by reference를 장단점을 간단히 정리하자면 <br>
+1. 변경을 막아야한다면 작은 객체는 pass by value를 하고 큰 객체는 cosnt 한정자를 붙인 pass by reference를 사용한다 <br> 
+2. 변경을 해야한다면 pass by reference를 사용한다.
+
+다만 pass by reference를 사용할 때는 매개변수에 값을 지정할 수 없다 <br>
+
+```cpp
+void fun(int& rX){....}
+fun(5); // 컴파일 오류 
+```
+위의 코드에서, rX가 참조 매개변수로, 함수를 호출할 때는 변수를 매개변수로 넣어야한다. 
+
+클래스의 복사 생성자를 만드는 경우에는? <br>
+객체를 전달해야 하기때문에 비용이 많이 들 수 있고, pass by value자체가 복사 생성자를 활용하는 것이므로 **복사 생성자에서는 pass value를 사용할 수 없다 (무한 반복에 빠지기 때문에)** <br>
+따라서 const 한정자를 붙인 참조를 사용해야한다. 
+
+```cpp
+Circle::Circle(const Circle& circle)
+: radius(circle.radius){.... }
+```
+
+[9-2 pass by reference를 사용해서 스왑함수 만들기]()
+
 * ##### 참조로 리턴 (Retrun by Reference)
+  Return by Reference는 호출된 함수에서 호출한 함수쪽으로 객체를 리턴할 때 사용한다.
+
+  * ##### 값으로 리턴(Return by value)의 특징
+    Return by value에서 호출된 함수는 다음과 같이 프로타입을 갖고 원하는 자료형의 객체를 리턴한다.
+
+    ```cpp
+    type function(....);
+    ```
+return by value는 간단하게 매개변수 또는 지역 변수의 값을 리턴할 수 있다. 하지만 유일한 단점은 복사 비용임 <br>
+리턴 해야하는 객체가 기본형이면 괜찮지만 클래스라면 복사 생성자가 호출될 것이며, 일반적으로 높은 복사 비용이 들어갈 것이다 <br>
+
+  * #### 참조로 리턴(Return by Reference)의 특징
+    return by reference에서 호출된 함수는 다음과 같은 프로토 타입을 가지고 원하는 자료형에 대한 참조 리턴을 한다 <br>
+    ```cpp
+    type& function(....);
+    ```
+    return by reference는 복사 비용이 없지만, **일반적으로 매개변수와 지역 변수의 값을 리턴할 수 없다** <br>
+    **함수가 종료될 때 모든 매개변수와 지역 변수의 값이 파괴되기 때문에**, 객체가 파괴되면 원본 변수가 파괴되므로, 참조 변수가 가리키는 메모리 위치 자체가 사라진다. <br>
+    **반대로 말하면 참조 매개변수와 정적 지역변수는 함수가 종료되어도 파괴되지 않아 리턴할 수 있다** <br>
+
+```cpp
+  #include <iostream>
+  using namespace std;
+//return by value
+int larger(int x, int y); 
+
+  int main(void){
+    int x, y, z;
+    x = 10;
+    y = 20;
+    z = larger(x,y);
+    cout << z << "\n";
+    return 0;
+  }
+
+int larger(int x, int y){
+
+if(x > y) {
+return x;
+}
+return y;
+}
+```
+
+```cpp
+  #include <iostream>
+  using namespace std;
+//return by reference
+  int& larger(int& x, int& y); 
+
+  int main(void){
+    int x, y, z;
+    x = 10;
+    y = 20;
+    z = larger(x,y);
+    cout << z << "\n";
+    return 0;
+  }
+
+int& larger(int& x, int& y){
+
+if(x > y) {
+return x;
+}
+return y;
+}
+```
+
+위의 두 코드는 두 정수 중에 더 큰 정수를 찾는 함수를 만드는 예시 코드이다. <br>
+pass by value와 return by value 조합을 사용할 수 있고, pass by reference와 return by reference를 조합해서 사용할 수 있다. 
+
+
 --------------------------------------------------
 * ### 9-2 Pointer 
- 
+
+ * #### 주소 
+ * #### 포인터 자료형과 포인터 변수
+ * #### 값 추출
+ * #### const 한정자
+ * #### 포인터의 포인터
+ * #### 특수한 포인터
+ * #### 포인터의 활용
+
+------------------------------------------------
+* ### 9-3 Array & Pointer
+
+* #### 1차원 배열과 포인터 
