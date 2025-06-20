@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#ifndef 7-10_INTERFACE.H
-#define 7-10_INTERFACE.H
+#ifndef 7-10_INTERFACE_H
+#define 7-10_INTERFACE_H
   
 class Fraction{
   private:
@@ -18,7 +18,7 @@ public:
 Fraction(int num, int den);
 Fraction();
 Fraction(const Fraction &fract);
-~Fraction;
+~Fraction();
 //접근자
 int getNumer() const;
 int getDenom() const;
