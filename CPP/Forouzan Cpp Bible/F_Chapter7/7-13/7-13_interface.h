@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-#ifndef 7-13_INTERFACE.H
-#define 7-13_INTERFACE.H  
+#ifndef 7-13_INTERFACE_H
+#define 7-13_INTERFACE_H  
 
 class Time{
   private:
