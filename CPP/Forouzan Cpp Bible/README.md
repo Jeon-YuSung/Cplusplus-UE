@@ -30,7 +30,7 @@ Chapter1. 컴퓨터와 프로그래밍 언어
 
 [Chapter9. 참조, 포인터, 메모리 관리](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter9)
 
-Chapter10. 문자열
+[Chapter10. 문자열](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10)
 
 Chapter11. 클래스 간의 관계
 
