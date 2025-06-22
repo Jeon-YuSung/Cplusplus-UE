@@ -70,7 +70,7 @@ strcpy(str1,str2); //str2 전체 복사
 strncpy(str1, str2, n); // str2의 일부 복사
 ```
 str1에 str2의 내용을 복사해서 붙이는 느낌임 
-[10-1. 문자열 복사하기]()
+[10-1. 문자열 복사하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-1.cpp)
 
 null문자를 제외한 문자열의 문자 수는 C문자열의 크기로 strlen를 통해 길이를 구할 수 있음. <br>
 
@@ -79,11 +79,11 @@ stze_t n = strlen(str); //str 문자열 길이 구하기
 ```
 strlen는 매개변수로 C문자열을 받고, size_t로 리턴을 하는데, size_t는 라이브러리 내부에서 부호 없는 정수를 나타낸다. 
 
-[10-2. 문자열과 멀티 바이트 문자의 크기]()
+[10-2. 문자열과 멀티 바이트 문자의 크기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-2.cpp)
 
 * ##### 입출력
 
-[10-3. C문자열 사용하기]()
+[10-3. C문자열 사용하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-3.cpp)
 
 getline 함수는 공백을 포함하여 한줄을 모두 읽어 들이고 싶은 경우에 사용.
 
@@ -92,11 +92,11 @@ cin.getline(str,n); // '\n'을 구분 문자로 사용
 cin.get(str,n,'구분 문자'); // '구분 문자'를 구분 문자로 사용 
 ```
 
-[10-4. C문자열 사용하기]()
+[10-4. C문자열 사용하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-4.cpp)
 
 * ##### 접근과 탐색
   
-[10-5. C 문자열의 문자에 접근]()
+[10-5. C 문자열의 문자에 접근](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-5.cpp)
 
 strchr, strrchr를 통해 문자를 탐색할 수 있음. 
 
@@ -104,14 +104,14 @@ strchr, strrchr를 통해 문자를 탐색할 수 있음.
 char* ptr = strchr(str, 'c'); //정방향
 char* ptr = shtrrchr(str, 'c'); //역방향 
 ```
-[10-4. C문자열 내부에서 문자 찾고 변경]()
+[10-6. C문자열 내부에서 문자 찾고 변경](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-6.cpp)
 
 strstr는 문자열 내부의 문자열을 탐색할 수 있음. <br>
 
 ```cpp
 char* ptr = strstr(str, substr); //서브 문자열 찾기
 ```
-[10-7. 서브 문자열 탐색 ]()
+[10-7. 서브 문자열 탐색 ](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-7.cpp)
 
 strpbrk는 문자열 내부에서 어떤 문자들 중 특정 하나가 등장하는 위치를 찾아야하는 경우에 사용<br>
 
@@ -119,7 +119,7 @@ strpbrk는 문자열 내부에서 어떤 문자들 중 특정 하나가 등장�
 char* p = strpbrk(str, set); //문자 집합 set에서 처음 등장하는 문자 찾기
 ```
 
-[10-8. 문자들 중에 특정 문자의 위치 찾기]()
+[10-8. 문자들 중에 특정 문자의 위치 찾기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-8.cpp)
 
 * ##### 비교와 결합
  
@@ -130,7 +130,7 @@ int a = strcmp(str1,str2); // str1, str2 전체 비교
 int b = strncmp (str1,str2,n); // str1,str2 문자 일부 비교
 ```
 
-[10-9. C문자열 비교하기]()
+[10-9. C문자열 비교하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-9.cpp)
 
 한 문자열 뒤에 다른 문자를 붙일 수 있음, 결합(Concatenation)은 두 문자열 중에 하나만 변경이 일어남 <br>
 strcat, strncat를 사용 
@@ -139,7 +139,7 @@ strcat, strncat를 사용
 strcat(str1,str2); // str1 뒤에 str2 결합 (append)
 strncat(str1,str2,n); //str1뒤에 str2의 문자 n개 결합 
 ```
-[10-10. strcat과 strncat 사용]()
+[10-10. strcat과 strncat 사용](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-10.cpp)
 
 * ##### 토큰화
   string token은 문자열을 구분 기호(공백 등)으로 잘라 만들어진 작은 문자열임 <br>
@@ -148,7 +148,7 @@ strncat(str1,str2,n); //str1뒤에 str2의 문자 n개 결합
   strtok은 구분 기호가 아닌 문자 중에 처음 등장하는 문자를 찾아서 포인터를 리턴하고 만약에 찾을 수 없는 경우 아무 것도 하지 않는다. <br> 
   이어서 구분 기호를 찾아 해당 문자를 널 문자로 변경
 
-  [10-11. C문자열 토큰화]()
+  [10-11. C문자열 토큰화](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-11.cpp)
 
 ---------------------------------------------
 #### C++ 문자열 클래스.
