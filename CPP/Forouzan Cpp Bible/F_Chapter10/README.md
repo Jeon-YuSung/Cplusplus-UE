@@ -168,7 +168,6 @@ C 문자열과 다르게 **NULL 문자**로 끝나지 않음 <br>
   string strg1(5,'a'); //aaaaa
   string strg2("hello"); // hello 
   string strg3("hello",3); // "hel
-
 ```
 
 복사 생성자 : 
@@ -189,10 +188,10 @@ string strg2(oldstrg1, index, length); // 일부 복사
 
   + 크기와 최대 크기  :
 
-  ```cpp
+```cpp
 size_type n = strg.size(); // 크기 구하기 
 size_type n = strg.max_size(); // 최대 크기 구하기 
-  ```
+```
 
 주의점 : 멀티 바이트 문자를 사용할 때 size 함수의 결과를 주의 해야함 시스템에 따라 크기가 다르기 때문에. <br>
 
@@ -210,7 +209,7 @@ strg.resize(n,'c'); //문자열의 크기를 변경하고 남는 부분을 'c'�
   capacity 함수를 사용해서 문자열의 현재 용적을 리턴. <br>
   추가적인 예약이 없으면 용적은 크기와 동일하고, reserce 함수를 사용해 용적을 추가로 예약할 수 있음 <br>
 
-  ```cpp
+```cpp
 size_type n = strg.capacity(); //용적 구하기
 strg.reserve(n); //용적 예약
 ```
@@ -230,7 +229,7 @@ reserve 함수의 매개변수가 현재 문자열의 크기보다 작으면 아
    + Getline 함수 : 
    '\n'까지 읽거나 구분 기호를 사용자가 지정해서 읽음  
 
-   ```cpp
+```cpp
 getline(cin, strg); // '\n'까지만 읽어들임.
 getline(cin, strg, 'c'); //'c'까지 읽어들임.
 ```
@@ -241,7 +240,7 @@ getline(cin, strg, 'c'); //'c'까지 읽어들임.
    
    C++문자열의 문자에 단순한 배열처럼 접근 가능, at 함수도 있음
    
-   ```cpp
+```cpp
 char c = strg[pos]; // 문자 c 수정 가능
 const char c = strg[pos]; // 수정 불가능
 char c= strg.at(pos); // 수정가능
@@ -292,25 +291,25 @@ string result =strg. substr(pos, n); //pos 위추부터 n개의 서브 문자열
 
       strg.clear(); //문자열 전체 제거
       strg.erase(pos,n); // 문자열의 일부 제거
-      
       ```
 
     +  연산자 오버로드와 변환 :
-   
-      ```cpp
+
+  ```cpp
   string strg = temp; //문자열 할당
   string strg += temp; //문자열 복합할당
   string strg = temp1 + temp2; //문자열 결합
-      ```
+  ```
 
   [10-23. getline 함수로 입력받기]()
 
-     [10-24. getline 함수로 입력받기]()
+  [10-24. getline 함수로 입력받기]()
 
   ```cpp
   const char* arr =strg.data(); // 문자 배열로 변환
   const char* str =strg.c_str(); // C 문자열로 변환
   ```
+  
 위의 코드처럼 C++ 문자열 객체를 문자 배열 또는 C 문자열로 변환 할 수 있음. 
 
 ---------------------------------------------------
