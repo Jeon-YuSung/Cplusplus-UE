@@ -220,11 +220,11 @@ reserve 함수의 매개변수가 현재 문자열의 크기보다 작으면 아
 
   empty 함수는 문자열의 크기가 0이면 true를 리턴, 이외의 경우 false를 리턴 
 
-  [10-12. 크기, 용적과 관련된 멤버함수 사용하기]()
+  [10-12. 크기, 용적과 관련된 멤버함수 사용하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-12.cpp)
 
  + 입출력 : 
   
-   [10-13. 입출력 연산자 사용하기]()
+   [10-13. 입출력 연산자 사용하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-13.cpp)
 
    + Getline 함수 : 
    '\n'까지 읽거나 구분 기호를 사용자가 지정해서 읽음  
@@ -234,7 +234,7 @@ getline(cin, strg); // '\n'까지만 읽어들임.
 getline(cin, strg, 'c'); //'c'까지 읽어들임.
 ```
    
-   [10-14. getline 함수로 입력받기]()
+   [10-14. getline 함수로 입력받기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-14.cpp)
 
   + 접근과 출력 : 
    
@@ -247,11 +247,11 @@ char c= strg.at(pos); // 수정가능
 const char c = strg.at(pos); //수정 불가
 ```
 
-  [10-15. 문자열 내부의 문자 추출하기]()
+  [10-15. 문자열 내부의 문자 추출하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-15.cpp)
 
-  [10-16. 모든 단어를 대문자로 만들기]()
+  [10-16. 모든 단어를 대문자로 만들기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-16.cpp)
 
-  [10-17. 문자열 객체 뒤집기]()
+  [10-17. 문자열 객체 뒤집기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-17.cpp)
  
  + 서브 문자열 추출 :
 
@@ -261,25 +261,25 @@ const char c = strg.at(pos); //수정 불가
 string result =strg. substr(pos, n); //pos 위추부터 n개의 서브 문자열 추출
 ```
 
-   [10-18. 서브 문자열 추출하기]()
+   [10-18. 서브 문자열 추출하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-18.cpp)
  
  + 문자 탐색 :
 
    find 함수와 rfind 함수를 사용해서 찾을 수 있음.
 
-   [10-19 문자열의 단어 추출하기]()
+   [10-19 문자열의 단어 추출하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-19.cpp)
 
 + 문자열 비교 :
 
   compare 함수를 사용.
   
-     [10-20. getline 함수로 입력받기]()
+     [10-20. getline 함수로 입력받기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-20.cpp)
 
   + 연산자를 사용한 비교 :
 
-     [10-21. getline 함수로 입력받기]()
+     [10-21. getline 함수로 입력받기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-21.cpp)
 
-    [10-22. getline 함수로 입력받기]()
+    [10-22. getline 함수로 입력받기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-22.cpp)
 
     + 추가 연산 제거
 
@@ -301,9 +301,8 @@ string result =strg. substr(pos, n); //pos 위추부터 n개의 서브 문자열
   string strg = temp1 + temp2; //문자열 결합
   ```
 
-  [10-23. getline 함수로 입력받기]()
+  [10-23. getline 함수로 입력받기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-23.cpp)
 
-  [10-24. getline 함수로 입력받기]()
 
   ```cpp
   const char* arr =strg.data(); // 문자 배열로 변환
