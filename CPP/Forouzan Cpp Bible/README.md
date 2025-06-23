@@ -32,7 +32,7 @@ Chapter1. 컴퓨터와 프로그래밍 언어
 
 [Chapter10. 문자열](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10)
 
-Chapter11. 클래스 간의 관계
+[Chapter11. 클래스 간의 관계] (https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11)
 
 Chapter12. 다형성
 
