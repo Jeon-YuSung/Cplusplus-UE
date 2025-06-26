@@ -11,7 +11,6 @@
   상속의 종류를 따로 지정하지 않으면 private 상속. <br>
   명시적으로 상속할 때 접근 제한자의 종류를 지정해주는 것이 일반적 <br>
 
-(11-1.Public상속)[https://github.com/ysungJ/Cplusplus-UE/edit/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/11-1.cpp]
+[11-1.Public상속](https://github.com/ysungJ/Cplusplus-UE/edit/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/11-1.cpp)
 
----------------------
-예제 11-2 부터 헤더파일, 어플리케이션, 구현 파일로 나눠져 있어서 추후에 올리겠음
+[사람의 객체정보를 상속하여 학생의 객체 정보와 학점을 출력하는 프로그램](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/person_and_student)
