@@ -14,3 +14,16 @@
 [11-1.Public상속](https://github.com/ysungJ/Cplusplus-UE/edit/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/11-1.cpp)
 
 [사람의 객체정보를 상속하여 학생의 객체 정보와 학점을 출력하는 프로그램](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/person_and_student)
+
+
+* 상속 막기
+  설계자 입장에서 추가적인 클래스 상속을 막고 싶을 때 **final 한정자**를 사용<br>
+  final 한정자는 클래스 계층 구조의 어떤 위치이든 사용 할 수 있음.
+
+  * 상속 트리
+    ()[]
+    
+-------------------------------------
+
+### 11-2. 연관(Association)
+
