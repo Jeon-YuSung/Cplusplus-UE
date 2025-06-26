@@ -62,7 +62,7 @@ dependency는 inheritance와 Association의 관계 보다는 약한 관계로 �
   
  의존 관계에서는 UML 클래스 다이어그램과 시퀀스 다이어 그램을 사용.
 
- [의존 관계을 보여주는 예시 프로그램]()
+ [의존 관계을 보여주는 예시 프로그램](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/Dependency_Invoice%20and%20Product)
 
 ------------------------------
 ### 11-4 [LAB] 응용 프로젝트
