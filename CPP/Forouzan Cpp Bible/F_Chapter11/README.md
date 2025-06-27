@@ -3,8 +3,8 @@
 ---------------------------------
 ### 11-1. 상속(inheritance)
 
-  C++에서 범용적인 클래스를 Base class 또는 Super Class라고 함 <br>
-  구체적인 클래스를 Derived Class 또는 Sub Class라고 부름. <br> 
+  C++에서 범용적인 클래스를 Base class 또는 Super Class라고 함 (혹은 부모 클래스) <br> 
+  구체적인 클래스를 Derived Class 또는 Sub Class라고 부름 (혹은 자식 클래스). <br> 
   Sub class는 Super Class에서 확장(Extend)한 것이라고 표현. <br>  
 
   파생 클래스를 만들 때 public, protected, private 3가지 방식으로 만듬 <br>
