@@ -1,7 +1,7 @@
 // 12-6. shape클래스를사용한 어플리케이션 
 #include "square.h"
 #include "rectangle.h"
-#include "Circle.h"
+#include "circle.h"
 
 
 int main(void) {
