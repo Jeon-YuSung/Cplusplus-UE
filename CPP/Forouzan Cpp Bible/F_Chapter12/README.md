@@ -165,24 +165,26 @@ Student 클래스가 Person의 자식 클래스일 때만 가능하며, 이를 �
     
   * Shape 클래스 <br>
   
-  [12-6. 추상클래스의 Shape 클래스 사용 예시]()
+  [12-6. 추상클래스의 Shape 클래스 사용 예시](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter12/Example_Multiple_Shape)
 
 * ##### 다중 상속 (Multiple inheritance)
   다중 상속은 둘 이상의 클래스를 부모 클래스로 자식 클래스를 만드는 상속을 의미 <br>
   즉, 하나의 클래스가 부모 클래스로부터 상속을 받을 수 있게 해주는 기능 <br>
 
   * 가상 베이스
+
     중복된 데이터 멤버를 해결하는 방법 중 하나로 가상 베이스 상속(virtual base inheritance)을 사용 <br>
     가상 베이스 상속은 상속할 때, virtual 키워드를 붙이는 방식임. <br>
 
 가상 베이스를 사용면, 자식 클래스에 부모 클래스의 멤버가 직접적으로 들어가지 않음. <br>
 그리고 위임을 피해야함. 즉, 공통 데이터 멤버를 protected를 만들어서 모든 자식 클래스에서 접근할 수 있게하고, 위임이 있는 멤버함수는 사용하지 않은 방식임. -> 데이터 멤버를 직접 사용해서 코드를 짜야함. <br>
 
-  [12-7. 다중 상속 예시]()
+  [12-7. 다중 상속 예시](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter12/Example_MultiInheritance_TA)
 
-    * 믹스인 클래스 
-    중복으로 발생하는 문제를 해결하는 또 다른 방법   * 믹스인 클래스  
+  * 믹스인 클래스 
+    
+    중복으로 발생하는 문제를 해결하는 또 다른 방법 <br>
     Mixin class는 순수 가상 함수를 가져 인스턴스화할 수 없지만, 다른 클래스에 데이터 멤버를 추가해주는 클래스를 의미함. 
     
-    [12-8. Mixin Class를 사용하는 예시]()
+    [12-8. Mixin Class를 사용하는 예시](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter12/Example_MixinClass)
   
