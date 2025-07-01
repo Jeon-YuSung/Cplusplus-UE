@@ -117,7 +117,7 @@
    힙에서 생성하는 경우 메모리 누수를 방지 하기 위해서 객체를 제거해야함. <br>
    스마트 포인터는 원하는 자료형을 가리킬 수 있는 포인터를 데이터 멤버로 갖는 객체 <br> 
 
-   [13-1. Smart Pointer를 사용하는 프로그램 예제]()
+   [13-1. Smart Pointer를 사용하는 프로그램 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter13/13-1)
    
    참고로 스마트 포인터를 사용하지 않고도, 힙에 객체를 만들 수 있음.
    
@@ -134,7 +134,7 @@
 
  첨자 연산자([])는 연산자의 의미를 변경하지 않는 것이 좋음. <br>
 
- [13-2 배열을 이용한 첨자연산자 프로그램 예제]()
+ [13-2 배열을 이용한 첨자연산자 프로그램 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter13/13-2)
 
   * 함수 호출 연산자 (Function call operator)
 
@@ -143,7 +143,7 @@
     함수처럼 호출할 수 있는 객체를 만들 수 있음. 함수처럼 호출할 수 있는 객체를 함수 객체 or functor라고 부름 <br>
     함수 객체와 함수의 차이는 함수 객체는 상태를 계속해서 유지할 수 있고, 반면에 함수는 호출되면 상태가 사라짐.
 
-    [13-3. 함수호출자 예제 프로그램]()_
+    [13-3. 함수호출자 예제 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter13/13-3)_
 
     함수 객체는 함수 호출의 매개 변수 수를 제한하지 않음. <br>
     그러므로 하나 이상의 매개변수로 함수 호출 연산자를 오버로드 할 수 있음. <br>
