@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/50d2b9ba-7da6-4ff2-93f6-b513c56ec306)## 13장 연산자 오버라이드
+## 13장 연산자 오버라이드
 
  연산자 오버로드를 알아보는 챕터.
  
