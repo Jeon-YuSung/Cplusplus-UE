@@ -58,7 +58,7 @@ void Fraction::normalize(){
     numer = - numer;
   }
   int divisor = gcd(abs(numer),abs(denom));
-  number = number / divisor;
+  numer = numer / divisor;
   denom = denom / divisor;
     }
 
