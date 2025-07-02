@@ -153,10 +153,10 @@ throw; //호출한 함수쪽으로 예외 전파.
              
            * 스마트 포인터를 활용해 메모리 관리
               메모리 할당과 해제에 원시 포인터 (raw pointer)가 아니라 스마트 포인터(smart pointer)를 사용하면 생성자가 호출될 때 메모리를 할당하고, 소멸자가 호출될 때 메모리를 해제함 스마트 포인터의 생성자에는 별도의 처리가 없기에 내부적으로 문제가 발생하지 않고 소멸자도 항상 호출 됨. <br>
+           
            * Function-try 블록
              생성자 내부에서도 try-catch 블록을 사용해서 예외처리가 가능 함. 하지만 초기화 리스트에서 예외가 발생한다면 try-catch블록을 결합한 형태의 function-try 블록을 사용해야함 <br>
-
-            Function-try은 모든 함수에서 사용할 수 있고 함수 뒤에 곧바로 try catch 블록을 붙여서 사용하는 형태임. 하지만 일반적인 함수는 내부에 try-catch블록을 넣기 때문에 거의 사용하지 않고 클래스 또는 구조체의 생성자와만 조합해서 사용하는 편이지만 많이 사용하지 않음 <br>
+             Function-try은 모든 함수에서 사용할 수 있고 함수 뒤에 곧바로 try catch 블록을 붙여서 사용하는 형태임. 하지만 일반적인 함수는 내부에 try-catch블록을 넣기 때문에 거의 사용하지 않고 클래스 또는 구조체의 생성자와만 조합해서 사용하는 편이지만 많이 사용하지 않음 <br>
 
 ```cpp
 void test() try{
@@ -171,7 +171,7 @@ int main(void){
 }
 ```
 
-[14-7. Intger 클래스를 사용한 예제 프로그램]()
+[14-7. Intger 클래스를 사용한 예제 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter14/14-7)
 
   * 소멸자에서의 예외 처리
 
@@ -179,8 +179,69 @@ int main(void){
 
 ------------------------------------------------------
   * ### 14-3. 표준 예외 클래스
+
+      표준 예외 클래스라고 부르는 클래스들이 존재함 exception class에서 파생된 모든 클래시를 예외 클래스라고 부름 <br>
+    exception 클래스에 정의된 모든 멤버 함수에는 예외 사양이 존재, 단순하게 괄호()로 되어있어, 어떠한 예외도 발생하지 않는다는 의미임. <br>
+    what 멤버 함수는 예외와 관련된 설명을 나타내는 C 문자열을 리턴하는 가상 함수. 즉, 자식 클래스에서 이를 구현해서 제공 해줌. <br>
+    
   * 논리 오류
+    logic_error라는 클래스가 있음. 논리 오류와 관련된 4개의 클래스의 부모 클래스임 <br>
+
+```cpp
+   explicit logic_error(const string& whatArg) //생성자
+   virtual const char* what() const throw() //멤버 함수   
+```
+
+logic_error 클래스에서 domain_error, out_of_range, length_error, invalid_argument라는 클래스가 파 됨 <br> 
+이러한 자식 클래스의 모든 생성자 함수는 logic_error 클래스와 이름만 다르지 같은 매개변수를 받으며 what 멤버 함수를 사용할 수 있음 <br>
+  
+  1. domain_error : 데이터가 도메인(영역)에서 벗어난 경우에 발생, 즉 도메인을 벗어나는 값이 전달될 때 발생
+  2. out_of_range : 라이브러리 클래스에서 인덱스를 넘는 어떤 처리를 할 때 발생
+  3. length_error : 객체의 길이가 필요한 길이와 다른 경우에 발생
+  4. invalid_argument : 어떤 논리적 오류가 있지만, 위의 3가지 예외에 속하지 않은 경우 사용할 수있는 범용적인 예외
+     
   * 런타임 오류
+
+       runtime_error라는 클래스는 일반적으로 오버플로우, 언더플로우등 결과가 범위를 벗어나는 경우에 활용함 <br>
+       stdexcept 헤더 파일을 읽어서 사용할 수 있음
+
+```cpp
+   explicit runtime_error(const string& whatArg) //생성자
+   virtual const char* what() const throw() //멤버 함수   
+```
+
+      underflow_error, overflow_error, range_error클래스가 파생됨 논리 오류 클래스처럼 이름만 다르지 같은 매개변수를 받고 what 함수를 사용할 수 있음 <br>
+
+      1. underflow_error : 산술 연산할 때 발생하지만 산술 연산을 할 때 underflow_error 클래스 자료형의 예외를 발생시키지는 않음 즉, 사용자 정의 함수에서 사용자가 언더플로우 발생 가능성이 있는 코드에서 사용함.
+      2. overflow_error : 언더플로우 처럼 산술 연산할 때 발생함. 이 또한 사용자가 오버플로우 발생 가능성이 있는 코드에서 사용 
+      3. range_error : 함수의 결과가 예상한 범위를 넘을 때 발생 시키도록 설계됨. out_of_range 예외는 함수의 매개변수와 관련된 것이기에 사용되는 상황이 약단 다름. cmath 헤더 파일에 내장되어 있는 수학 함수들은 range_error를 발생시키지 않지만, 다른 라이브러리 함수 등에서 일부 range_error예외를 발생 시킴. 
+      
   * 이외
+
+    1.bad_exception : 함수 내부에서, 예외 사양에서 지정하지 않은 예외가 throw될 때 발생. <br>
+    2.bad_alloc : new 헤더는 동적 메모리 할당과 관련된 함수들을 제공, new가 어떤 이유로 요청된 메모리를 할당 할 수 없는 경우에 발생 <br>
+    3. bad_typied : typeid의 피연산자가 NULL pointer일때 발생 (typeid(*p)에서 p가 널 포인터일 경우) <br>
+    4. bad_cast : dynamic_cast이 실패할 때 발생 <br>
+    5. failure : ios 헤더 내부에서 입출력과 관련된 예외의 부모 클래스로 사용됨. ios_base 스코프 내부에 있기에 ios_base::failure등의 형태로 사용해야함 <br>
+
+```cpp
+explicit failure(const string& mesg) // 생성자
+virtual ~failure() //소멸자
+virtual const char* what() const throw() //멤버함수 
+```
+
+C++의 입출력 클래스는 언어가 예외 처리를 지원하기 전에 만들어져서 failure 클래스는 나중에 예외 클래스 계층에 추가 됨. <br>
+입출력 클래스는 스틈에서 오류가 발생하는지 알 수 있게 하는 상태를 가지고 있음 <br>
+
+```cpp
+void exception(iostate flags) // 예외를 발생시킬 입출력 상태 설정
+iostate exception() const // 현재 설정되어 있는 예외를 발생시키는 입출력 상태 확인 
+```
+
+첫 번째 함수는 어떤 상태일 때 예외를 발생시킬지 설정하고, 두 번째 함수는 예외를 발생시키는 상태를 리턴함 
+
   * 표준 예외 클래스의 사용
     
+    사용자 정의 예외 클래스를 만들지 않아도 exception 또는 stdexcpet 헤더에 정의되어 있는 표준 예외 클래스를 사용함 <br>
+    
+    [14-8 invaild_arugment 클래스를 사용한 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter14/14-8.cpp)
