@@ -6,19 +6,19 @@
 using namespace std;
 
 int main(void) {
-  fstream fstr;
-  fstr.open("16-13_file.txt", ios::in | ios::out);
-  char ch;
+    fstream fstr;
+    fstr.open("TestFile1.txt", ios::in | ios::out);
+        char ch;
 
-  while(fstr.get(ch)){
-        
-    if(isspace(ch)){
+    while (fstr.get(ch)) {
 
-        fstr.seekp(-1, ios::cur);
-        fstr.put('\r');
-      }
-  }
+        if (isspace(ch)) {
 
-  fstr.close();
-	return 0;
+            fstr.seekp(-1, ios::cur);
+            fstr.put('\r');
+        }
+    }
+
+    fstr.close();
+    return 0;
 }
