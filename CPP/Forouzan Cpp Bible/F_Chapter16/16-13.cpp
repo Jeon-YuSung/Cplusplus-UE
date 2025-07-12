@@ -7,7 +7,7 @@ using namespace std;
 
 int main(void) {
   fstream fstr;
-  fstr.open("16-13_file.txt", ios::in | ios::out):
+  fstr.open("16-13_file.txt", ios::in | ios::out);
   char ch;
 
   while(fstr.get(ch)){
