@@ -19,4 +19,5 @@ int main(void) {
 	}
 	istr.close();
 	
-	r
+	return 0;
+}
