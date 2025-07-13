@@ -63,7 +63,7 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
       ios::badbit : 입출력 스트림에서의 스트림에 문제가 발생했다는 것을 뜻 함, eofbit, failbit가 설정되었을 때 자동으로 설정되며, 메모리 부족 또는 변환 문제 등의 예외가 발생해서 스트림의 무결성 손실된 경우 설정 됨<br>
       ios::goodbit : 입출력 스트림에서 모든 것이 정상적으로 동작함, **위의 세 비트가 아무것도 설정되어 있지 않을 때, 스트림은 정상적인 상태로 스트림을 활용해 읽고 쓰기 작업이 가능함.** <br>
       또한 상태와 관련된 멤버 함수가 있는데 operator void*()는 객체를 자료형으로 변환하는 자료형 변환 연산자 오버로드 함수임, operator!()는 논리 부정 연산자 오버로드 함수로 operator void*()에서 불로 변환되는 것읋 리턴하는 함수라고 생각하면 됨 <br>
-      [16-1. cin 객체 상태 확인 하기]()
+      [16-1. cin 객체 상태 확인 하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-1.cpp)
       
     - 콘솔 입출력
       istream, osstream 객체의 버퍼가 char 자료형으로 해석될 수 있는 8bit로 구성된 byte 집합을 내부적으로 사용할 수 있음 <br>
@@ -76,9 +76,9 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
 
       istream은 2가지 형태의 get 함수를 제공하는데, int get()함수는 버퍼에 있는 문자자의 ASCII 정수를 리턴해주는 형태이며, istream 객체에 대한 참조를 리턴하지 않기 때문에 함수 호출할 떄 스트림의 상태를 확인 할 수 없음, istream& get(char& c)는 매개변수에 지정한 문자를 읽어 들이는 형태 <br>
       ostream은 put 함수 하나의 형태만 있는데, 이는 매개변수로 전달한 문자를 복사해서 함수에 출력하는 역할을 함. <br>
-      [16-2. int get 함수 사용하는 예제]() <br>
-      [16-3. get, put 함수를 사용하는 예제]() <br>
-      [16-4. getline 함수를 사용하는 예제]()
+      [16-2. int get 함수 사용하는 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-2.cpp) <br>
+      [16-3. get, put 함수를 사용하는 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-3.cpp) <br>
+      [16-4. getline 함수를 사용하는 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-4.cpp)
 
     - 기본 자료형 읽고 쓰기
       istream, ostream은 기본적으로 문자 스트림 클래스라 내부적으로 모든 것들이 문자 입출력으로 이루어짐. 즉, 기본 자료형의 값을 입출력 스트림에 넣을 수 없지만 오버로되어 있는 형태의 추출 연산자와 삽입연산자로 기본 자료형으로 값을 추출하거나, 값을 출력할 수 있음. <br>
@@ -96,18 +96,18 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
 
     - 파일 입출력
       
-      [16-5 파일에 출력하는 5가지 단계]() <br>
-      [16-6. 기존에 있는 파일 읽어들이기]()
+      [16-5 파일에 출력하는 5가지 단계](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-5.cpp) <br>
+      [16-6. 기존에 있는 파일 읽어들이기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-6.cpp)
 
     - 열기 모드 (opening mode)
       일반적으로 입력을 목적으로 할 때 ios::in과 ios::in | ios :: ate를 사용 <br>
       ios::in은 파일을 열고 버퍼의 가장 앞부분에 마커를 놓기 때문에 앞부분부터 byte를 읽어 들이며 파일의 끝에 도달하면(eofbit가 설정되는 경우) 읽기를 종료 함 <br>
       ios::in | ios :: ate은 마커를 마지막 byte에 놓기 때문에 처음부터 eofbit가 설정되어 있어 파일을 읽을 수 없음. 주로 byte를 반대로 읽거나, 파일의 크기를 찾을 때 사용함 
       
-    [16-7. ios::in를 사용해서 파일 읽어 들이기]() <br>
-    [16-8. 입출력 모드를 사용해서 파일의 내용 복사]() <br>
-    [16-9. 기존의 파일뒤에 추가하기 ios::out | ios :: app 사용]() <br>
-    [16-10. 입출력 모두를 목적으로 파일 열기 ios:: in | ios :: out 사용]()
+    [16-7. ios::in를 사용해서 파일 읽어 들이기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-7.cpp) <br>
+    [16-8. 입출력 모드를 사용해서 파일의 내용 복사](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-8.cpp) <br>
+    [16-9. 기존의 파일뒤에 추가하기 ios::out | ios :: app 사용](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-9.cpp) <br>
+    [16-10. 입출력 모두를 목적으로 파일 열기 ios:: in | ios :: out 사용](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-10.cpp)
     
     - 다른 멤버 함수
       
@@ -117,15 +117,15 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
       int peek() 문자 제거하지 않고 확인만 하기 <br>
       istream& ignore(int n = 1, int d = eof) 문자를 추출하지 않고 건너 뛰기
 
-      [16-11. unget 함수를 사용한 예제 프로그램]()
+      [16-11. unget 함수를 사용한 예제 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-11.cpp)
 
     - 순차 접근과 임의 접근
    
       버퍼에 차근차근 접근 -> 순차 접근(sequential access), 특정 위치에 곧바로 접근 -> 임의 접근(random access)
 
-      [16-12. 문자의 위치와 값 출력 하기]() <br>
-      [16-13. 띄어쓰기 문자를 줄바꿈 문자로 변경하기]() <br>
-      [16-14. 파일의 크기 찾기]()
+      [16-12. 문자의 위치와 값 출력 하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-12.cpp) <br>
+      [16-13. 띄어쓰기 문자를 줄바꿈 문자로 변경하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-13.cpp) <br>
+      [16-14. 파일의 크기 찾기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-14.cpp)
 
     - 이진 입출력
 
@@ -137,11 +137,11 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
       reinterpret_cast<자료형2*>(*자료형1) <br>
       일반적으로 이진 입출력에서는 자료형1이 기본 자료형이고 자료형2가 char 자료형임
 
-      [16-15. 이진데이터 읽고 쓰기]()
+      [16-15. 이진데이터 읽고 쓰기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-15.cpp)
 
     - 사용자 정의 자료형으로 변환
 
-      [16-16. 인터페이스 파일]()
+      [16-16. 인터페이스 파일](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-16)
 
     - 이진 파일의 임의 접근
    
@@ -151,6 +151,35 @@ istringstream, ostringstream, stringstream은 문자열 스트림이라고 함 <
   -------------------------------------------------------
       
   * ### 16-4. 문자열 스트림
+  
+    문자열 스트림의 데이터 소스와 싱크는 프로그램 내부에 있는 문자열 <br>
+    내부에 있기 떄문에 열고 닫는 과정이 없고, 프로그램 내부에서 생성하고 자동으로 소멸되기 때문에 문자열 스트림에서는 open()함수와 close() 함수가 없음
+
+    - 인스턴스화
+      
+      [16-19. 문자열 스트림 클래스 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-19.cpp)
+
+    - 어댑터 활용
+        
+        [20-20 기본자료형과 문자열을 서로 변환 하는 프로그램 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-20)
+
+------------------------------------------------------
+
   * ### 16-5. 데이터 형식화
- 
-    
+
+     모든 스트림 클래스는 ios 클래스의 상속을 받기 때문에, 데이터 멤버와 멤버 함수를 가짐 <br>
+     사용자 정의 조정자를 만들려면 플래그, 필드, 변수를 알아야함.
+
+    - 플래그, 필드, 변수
+      
+      [16-22. 플래그, 필드, 변수를 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-22.cpp) 
+
+    - 표준 조정자
+      
+      [16-23. 조정자 출력을 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-23.cpp)
+
+    - 조정자 정의
+
+    [16-24. 사용자 정의 조정자 2개를 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-24.cpp) <br>
+    [16-25. 조정자 만들고 테스트하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-25.cpp) <br>
+    [16-26. 매개변수가 있는 조정자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter16/16-26)
