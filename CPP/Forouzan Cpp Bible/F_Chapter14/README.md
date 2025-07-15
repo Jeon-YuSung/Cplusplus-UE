@@ -210,11 +210,11 @@ logic_error 클래스에서 domain_error, out_of_range, length_error, invalid_ar
    virtual const char* what() const throw() //멤버 함수   
 ```
 
-      underflow_error, overflow_error, range_error클래스가 파생됨 논리 오류 클래스처럼 이름만 다르지 같은 매개변수를 받고 what 함수를 사용할 수 있음 <br>
+   underflow_error, overflow_error, range_error클래스가 파생됨 논리 오류 클래스처럼 이름만 다르지 같은 매개변수를 받고 what 함수를 사용할 수 있음 <br>
 
-      1. underflow_error : 산술 연산할 때 발생하지만 산술 연산을 할 때 underflow_error 클래스 자료형의 예외를 발생시키지는 않음 즉, 사용자 정의 함수에서 사용자가 언더플로우 발생 가능성이 있는 코드에서 사용함.
-      2. overflow_error : 언더플로우 처럼 산술 연산할 때 발생함. 이 또한 사용자가 오버플로우 발생 가능성이 있는 코드에서 사용 
-      3. range_error : 함수의 결과가 예상한 범위를 넘을 때 발생 시키도록 설계됨. out_of_range 예외는 함수의 매개변수와 관련된 것이기에 사용되는 상황이 약단 다름. cmath 헤더 파일에 내장되어 있는 수학 함수들은 range_error를 발생시키지 않지만, 다른 라이브러리 함수 등에서 일부 range_error예외를 발생 시킴. 
+   1. underflow_error : 산술 연산할 때 발생하지만 산술 연산을 할 때 underflow_error 클래스 자료형의 예외를 발생시키지는 않음 즉, 사용자 정의 함수에서 사용자가 언더플로우 발생 가능성이 있는 코드에서 사용함.
+   2. overflow_error : 언더플로우 처럼 산술 연산할 때 발생함. 이 또한 사용자가 오버플로우 발생 가능성이 있는 코드에서 사용 
+   3. range_error : 함수의 결과가 예상한 범위를 넘을 때 발생 시키도록 설계됨. out_of_range 예외는 함수의 매개변수와 관련된 것이기에 사용되는 상황이 약단 다름. cmath 헤더 파일에 내장되어 있는 수학 함수들은 range_error를 발생시키지 않지만, 다른 라이브러리 함수 등에서 일부 range_error예외를 발생 시킴. 
       
   * 이외
 
