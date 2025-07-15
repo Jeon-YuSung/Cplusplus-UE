@@ -36,7 +36,7 @@
 [18-3. QUEUE](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter18/18-3_Queue)
 
   
-  - #### 이진 탐색 트리
+  - #### Binary Search Tree
 
     연결 리스트, 스택, 큐는 모두 선형 구조이고, 비선형 구조에는 트리, 그래프가 있음 <br>
     트리에 있는 각각의 노드는 둘 이상의 노드와 연결됨. 또한 트리는 다양한 종류가 있지만, 컴퓨터 과학에서는 최대 2개의 노드와 연결되는 이진 트리(Binary Tree)를 많이 활용하고 Binary tree 중에서 노드와 연결된 왼쪽(첫 번째 노드)의 값이 오른쪽(두 번째 노드)의 값보다 작은 형태로 정렬된 트리를 이진 탐색 트리(Binary Search Tree)라고 함
