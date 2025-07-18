@@ -134,25 +134,28 @@
   - ### 19-5. Associative Container
       
       - 공용 인터페이스
+        
         연관 컨테이너는 key를 기반으로 값을 저장하고 접근 <br>
         일반적으로 이진 탐색 트리로 구현되어 있음.
         
       - set class
+        
         key와 값이 동일한 연관 컨테이너로, **key 라는 하나의 템플릿 자료형만 지정** <br>
         오름차순으로만 정렬되고 중복 불가능 <br>
         index를 사용해서, 요소에 접근할 수 있는 첨자 연산자와 at함수가 없어 key를 사용해서 접근 해야함
 
-        [19-15. 정수 set 다루기]() <br>
-        [19-16.student set을 만들고 정렬하는 예시]()
+        [19-15. 정수 set 다루기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/Set/19-15_SetMain.cpp) <br>
+        [19-16.student set을 만들고 정렬하는 예시](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/Set/setStudent)
         
       - map class
+        
         key와 값이 다른 연관 컨테이너, table, dictionary, associate array이라고도 불리는 객체 <br>
         key와 값을 쌍으로 갖는 요소를 여러 개 저장하는 컨테이너로 key를 기반으로 오름차순 정렬 <br>
         set과 비슷하지만, 맵은 요소에 접근할때 []연산자를 사용함 또한 index로 정수가 아닌 문자열을 사용 <br>
         하지만 []연산자가 벡터나 덱처럼 작용하지 않고 단순하게 key - value 쌍을 나타내기위한 표현임 그렇기 때문에, + 또는 -를 사용해서 요소들을 뛰어다닐 수 없고 양방향 반복자을 사용해서 반복을 돌 수 있음
         
-        [19-19. map을 이용해서 학생의 이름과 점수 저장하기]() <br>
-        [19-20. map을 이용해서 단어 개수 세기]()        
+        [19-19. map을 이용해서 학생의 이름과 점수 저장하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/Map/19-19_map_StudentMain.cpp) <br>
+        [19-20. map을 이용해서 단어 개수 세기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/Map/19-20_map_WordsCountMain.cpp)        
 
 --------------------------------------------------------------------------------
   - ### 19-6. 함수 사용
@@ -163,18 +166,18 @@
         직접 만들거나 라이브러리에서 제공한 것을 사용할 수 있음 <br>
         메모리에 저장되는 모든 엔티티는 주소를 갖는데, 함수의 정의도 메모리 위에 저장되기 때문에 함수도 어떤 주소를 가짐. 즉, 배열의 이름이 배열의 첫 번째 요소에 대한 포인터 인것 처럼, 함수의 이름도 함수가 저장된 위치의 첫 번째 바이트를 가리키는 포인터임.
 
-        [19-21. 함수에 대한 포인터 사용하기]() <br>
-        [19-22. for_each함수 조합해서 사용하기]()
+        [19-21. 함수에 대한 포인터 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/UsingFunction/19-21.cpp) <br>
+        [19-22. for_each함수 조합해서 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/UsingFunction/19-22.cpp)
 
       - 함수 객체
 
-        [19-13 함수 객체 사용하기]()
+        [19-13 함수 객체 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/UsingFunction/19-23.cpp)
 
         - STL 알고리즘의 함수 객체
             
           STL 내부적으로 여러 함수 객체를 정의하고 있음 functional 헤더 파일에 존재
 
-           [19-24. 단항 함수 객체]()
+           [19-24. 단항 함수 객체](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/UsingFunction/19-24.cpp)
 
 -------------------------------------------------------------------------------
         
@@ -187,23 +190,23 @@
       
       비변경 알고리즘은 컨테이너의 순서를 변경하지 않음, 요소를 변경할 수도, 변경하지 않을 수도 있음
       
-      [19-25. 비변경 알고리즘 사용하는 프로그램]()
+      [19-25. 비변경 알고리즘 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-25_nonMutating_Algorithm.cpp)
     
     - Mutating algorithm
 
       컨테이너의 구조를 변경하는 알고리즘
       
-      [19-26. 변경 알고리즘 사용하는 프로그램]()
+      [19-26. 변경 알고리즘 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-26_Mutating_AlgorithmsMain.cpp)
       
     - Sorting algorithm
       정렬 또는 정렬과 관련된 알고리즘을 제공
 
-      [19-27. 정렬 알고리즘 사용하기]()<br>
-      [19-28. 이진 탐색 알고리즘 사용하기]() <br>
-      [19-29. 두 집합의 합집합 구하기]() <br>
+      [19-27. 정렬 알고리즘 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-27_SortingAlgorithmsMain.cpp)<br>
+      [19-28. 이진 탐색 알고리즘 사용하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-28_BinarySearchAlgoritmsMain.cpp) <br>
+      [19-29. 두 집합의 합집합 구하기](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-29_setUnionMain.cpp) <br>
       
     - Numeric algorithm
       
       수치 알고리즘은 컨테이너의 요소 또는 컨테이너에 간단한 수학 연산을 적용 해주는 알고리즘임
 
-      [19-30. accmulate 수치 함수를 사용하는 프로그램] <br>
+      [19-30. accmulate 수치 함수를 사용하는 프로그램](https://github.com/Jeon-YuSung/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter19/STL_Algorithm/19-30_UsingAccumulateMain.cpp) <br>
