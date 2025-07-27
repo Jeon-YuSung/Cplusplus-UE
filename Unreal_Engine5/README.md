@@ -11,3 +11,6 @@
 ----------------------------------------------------------------------------
 ## B. 참고한 유데미 강의 (추가 예정)
 
+* B-1. [Unreal Engine 5: The Complete Beginner’s Course - David Nixon](https://www.udemy.com/course/unreal-engine-5-the-complete-beginners-course/?couponCode=KEEPLEARNING)
+
+* B-2. [한글자막Unreal Engine 5 C++ 개발자: C++ 학습하고 비디오 게임 제작하기 - Ben Tristem, GameDev.tv Team, Stephen Ulibarri, 웅진씽크빅 글로벌 ](https://www.udemy.com/course/unrealcourse-korean/?couponCode=KEEPLEARNING)
