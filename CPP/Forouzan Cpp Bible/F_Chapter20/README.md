@@ -37,26 +37,26 @@
       - create함수를 통해 만들 수 있고, create함수가 싱글턴 객체에 포함될 경우, 정적(Static) 함수로 만들어야 함
       - 생성자를 private로 선언하여 사용자가 직접적으로 접근할 수 없도록 만들어야함.
 
-      [20-1. 싱글턴 패턴 예제 코드]()
+      [20-1. 싱글턴 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Singleton%20Pattern)
 
    * 팩토리 메소드 패턴 (Factory Method Patten)
       - 객체를 생성하는 것은 전통적으로 사용자의 책임이기에, 객체를 만들 때 사용자는 객체와 관련된 세부적인 내용을 알고 있어야 함. 팩토리 메소드 패턴은 사용자의 이러한 점을 쉽게 만들어 주는 패턴
       - **팩토리 메소드 패턴을 사용하면 사용자는 최소의 정보만 제공하면, 적합한 객체를 인스턴스화 할 수 있음**
      
-     [20-2. 팩토리 메소드 패턴 예제 코드]()
+     [20-2. 팩토리 메소드 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Factory%20Method%20Pattern)
 
   * 빌더 패턴 (Builder Pattern)
      - 객체의 생성과 객체의 표현 형태를 분리해서 사용자가 쉽게 사용할 수 있도록 해주는 방법
      - GUI 프로그램에서 복잡한 그래픽 객체를 만들 때 사용 함. 
 
-    [20-3. 빌더 패턴 예제 코드]()
+    [20-3. 빌더 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Builder%20Pattern)
   
   * 프로토타입 패턴 (Prototype Pattern)
     - 사용자가 객체를 많이 만들어야 할 때 사용
     - clone 함수를 사용하면, clone함수 내부에서 복사 생성자를 호출하므로, 별도의 인스터스화와 초기화 없이 객체를 만들어 낼 수 있음.
     - 복제는 원본 대상이 있어야 하므로, 일단 첫 번째 객체는 생성자를 호출해서 만들어야 함.
 
-     [20-4. 프로토 타입 예제 코드]()
+     [20-4. 프로토 타입 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Prototype%20Pattern)
     
 ----------------------------------
 
@@ -77,19 +77,19 @@
   * **퍼사드 패턴 (Facade Pattern)**
     - 어댑터 패턴처럼 인터페이스와 관련된 패턴으로, **서브 시스템에 하나의 통합된 인터페이스를 제공하는 패턴**
    
-      [20-5. 퍼사드 패턴 예제 코드]()
+      [20-5. 퍼사드 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Facade%20Pattern)
 
   * **프록시 패턴 (Proxy Pattern)**
     - 프록시란 대리인이라는 뜻으로, 컴퓨터 프로그래밍에서도 **실제 객체의 일을 다른 객체가 하도록 하는 프록시 객체를 사용하는 패턴임**
 
-      [20-6. 프록시 패턴 예제 코드]()
+      [20-6. 프록시 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Proxy%20Pattern)
 
   * **데코레이터 패턴 (Decorator Pattern)**
     - 데코레이터 패턴을 사용하면 런타임 때 객체를 데코레이션을 할 수 있음
     - 데코레이션은 꾸민다는 뜻으로 추가적인 특징을 부여한다는 의미로, 여러 개의 다른 특징을 가진 객체를 만드는 것이 아니라, **하나의 객체를 여러 객체로 꾸며서 특징을 추가한다는 것임**
     - 일반적으로 GUI 애플리케이션에서 많이 사용됨.
    
-      [20-7. 데코레이터 패턴 예제 코드]()
+      [20-7. 데코레이터 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Decorator%20Pattern)
 
     - 데코레이터 패턴은 패턴을 사용한 것인지도 모르는 결과가 나올 수 있음. 하지만 사용하기 전에 어떤 원리가 있는지 알아 두면, 더 잘 활용할 수 있음. 
   
@@ -97,7 +97,7 @@
     - **여러 객체로 구성된 객체를 하나의 간단한 객체처럼 취급해야 할 때 사용**
     - 컴포짓 패턴도 GUI 프로그래밍에서 많이 사용됨.
 
-      [20-8. 컴포짓 패턴 예제 코드]()
+      [20-8. 컴포짓 패턴 예제 코드](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Composite%20Pattern)
       
 -----------------------------------
 
