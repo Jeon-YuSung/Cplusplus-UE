@@ -2,7 +2,7 @@
 
 #pragma once
 #ifndef MEETING_H
-#define MEETING_G
+#define MEETING_H
 #include <iostream>
 #include <string> 
 #include <cassert>
