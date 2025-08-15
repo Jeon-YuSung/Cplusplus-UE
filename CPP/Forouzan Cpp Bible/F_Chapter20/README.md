@@ -113,12 +113,12 @@
     - 어떤 처리를 세부적인 부분으로 나누고 부모 클래스에서 순서를 정의한 뒤에, 일반적인 부분을 구현한 뒤 자식 클래스에서 수부적인 부분을 정의해서 사용하는 패턴
     - 즉, **불변 속성은 부모 클래스에서 정의하고, 변할 수 있는 부분은 자식 클래스에서 정의하는 패턴**
       
-      [20-9. 템플릿 메소드 패턴 예제]()
+      [20-9. 템플릿 메소드 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Template%20Method%20Pattern)
       
   * **스트래티지 패턴 or 전략 패턴(Strategy Pattern)**
     - **함수 객체를 사용하는 패턴**
 
-    [20-10. 전략 패턴을 사용하는 예제]()
+    [20-10. 전략 패턴을 사용하는 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Strategy%20Pattern)
     
   * **커맨드 패턴 or 명령 패턴(Command Pattern)**
     - 초기의 객체 지향 프로그래밍에서 사용하던 **콜백 함수를 객체 지향적으로 어떻게 확장할 수 있을까?** 에서 시작한 패턴으로 함수끼리 통신하게 하지 말고, 객체끼리 통신하게 함.
@@ -132,33 +132,33 @@
 
     - 일반적으로 GUI 애플리케이션에서 사용됨.
        
-         [20-11. 커맨드 패턴 사용 예제]()
+         [20-11. 커맨드 패턴 사용 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Command%20Pattern)
       
   * **옵저버 패턴 or 관찰자 패턴(Observer Pattern)**
     - 상태가 변경될 때 이를 알려주는 객체가 필요하면 옵저버 패턴을 사용
     - 옵저버 패턴에는 Subject 객체와 Observer 객체가 있는데, 일단 Observer 객체가 Subject 객체를 구독(Subscribe)하게 함, 구독을 하면 Subject 객체는 자신의 상태가 변경될 때, Observer 객체에 메시지를 보내 이를 통지함, 구독은 이후에 구독 해제(Unsubscribe)할 수 있으며, 구독 해제시 Subject 객체가 변경되어도 Observer 객체에 이를 통지 하지 않음.
     - 구독과 구독 해제는 유니캐스트로 이루어져, 옵저버 객체는 필요할 때 1대1로 구독을 함. 반복 통지는 구하고 있는 모든 대상에 멀티캐스트로 이루어지기 때문에 Subject 객체는 구독하고 있는 모든 옵저버 객체에게 1대N으로 통지함.
    
-      [20-12. 옵저버 패턴 예제]()
+      [20-12. 옵저버 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Observer%20Pattern)
       
   * **상태 패턴(State Pattern)**
     - 상태가 변경되면, 행동이 달라지는 대상이 있음. On/Off하는 전등이나 자판기 등등
     - On/off 같은 상태를 객체로 정의하는 것이 상태 패턴임
 
-      [20-13. 상태 패턴 예제]()
+      [20-13. 상태 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/State%20Pattern)
       
   * **메멘토 패턴(Memento Pattern)**
     - 객체를 변경했는데, 어떠한 이유로 이전 상태로 복구해야 할 때, **객체를 이전 상태로 복구하는 메멘토 패턴**을 사용함.
     - 메멘토 패턴은 이전 상태를 유지하는 메멘토 객체라는 별도의 객체를 사용, 그렇기 때문에 상태를 변경 하는 객체(Originator 클래스의 객체)와 이전 상태를 저장하기 위한 객체(Memento 클래스의 객체)라는 2개의 객체가 필요함.
    
-      [20-14 메멘토 패턴 예제]()
+      [20-14 메멘토 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Memento%20Pattern)
       
   * **책임-연쇄 패턴(Chain-of Responsibility Pattern)**
     - 책임 연쇄 패턴에서는 **일련의 처리를 가진 객체가 있는데, 첫 번째 객체에 요청을 처리할 수 있는 기회를 제공하고, 만약 첫 번째 객체에서 모든 요청을 처리할 수 없다면, 다음 객체로 전달... 또 다른 다음 객체로 전달... 이런 과정을 마지막 객체까지 계속 반복하는 패턴임.**
     - 만약에 마지막 객체도 요청을 처리할 수 없다면, 요청이 취소(drop)됨
     - 일반적으로 GUI 프로그래미엥서 사용함.
    
-      [20-15. 책임 연쇄 패턴 예제]()
+      [20-15. 책임 연쇄 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Chain-of%20Responsibility%20Pattern)
 
       
   * **중재자 패턴(Mediator Pattern)**
@@ -167,11 +167,11 @@
     - 하지만 중재자 패턴을 사용하면, 각각의 객체에 대한 포인터를 하나씩, 모두 n개의 포인터를 갖고 다른 객체들은 포인터를 따로 가질 필요가 없으며, 다른 객체와 커뮤니케이션할 때는 중재자 객체를 사용함
     - 그룹에 새로운 객체를 추가할 때도 편함. 중재자가 없으면 모든 객체에 포인터를 하나하나 추가하기 때문에 불편하고 중재자를 사용하면 중재자가 객체에 포인터하나만 추가하면 됨.
 
-      [20-16. 중재자 패턴 예제]()
+      [20-16. 중재자 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Mediator%20Pattern)
       
   * **방문자 패턴(Visitor Pattern)**
     - 일부 연산을 사용자가 구현해야 하지만, 사용자가 캡슐화의 원칙과 다형성의 원칙을 위반하고 싶지 않아 **객체의 구현을 바꾸지 못하게 하고 싶을 때**가 있을 수도 있음.
     - 이 때, 사용자가 객체를 건드리지 못하고, 방문자로 추가적인 구현만 제공하게 하면 됨.
     - 일반적으로 컴파일러 설계 소프트웨어 또는 GUI 애플리케이션에서 많이 사용함.
 
-      [20-17. 방문자 패턴 예제]()
+      [20-17. 방문자 패턴 예제](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter20/Visitor%20Pattern)
