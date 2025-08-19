@@ -1,4 +1,4 @@
-<img width="640" height="672" alt="image" src="https://github.com/user-attachments/assets/609970aa-d109-4cdb-801d-d55a28112204" /># Ch1. 리스트, 스택, 큐
+# Ch1. 리스트, 스택, 큐
 
 ### 개요
   * 자료구조에는 선형구조와 비선형 구조가 존재.
