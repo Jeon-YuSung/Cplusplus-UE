@@ -18,6 +18,7 @@ void run_quick_sort_test();
 //메인 함수 정의
 int main(void){
 	run_quick_sort_test();
+	return 0;
 }
 
 
