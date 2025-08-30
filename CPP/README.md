@@ -14,4 +14,4 @@ C++ 공부
 
   * B-1. Complete C++20 Visual and Practical Course: Zero to Mastery - Rahmat M
   * B-2. Learn Advanced Modern C++ (Take your knowledge of C++ to the next level!) - James Raynard
-  * B-3. [Learn C++ for Game Development - Stephen Ulibarri](https://www.udemy.com/course/learn-cpp-for-ue4-unit-1/?couponCode=KEEPLEARNING)
+  * B-3. Learn C++ for Game Development - Stephen Ulibarri
