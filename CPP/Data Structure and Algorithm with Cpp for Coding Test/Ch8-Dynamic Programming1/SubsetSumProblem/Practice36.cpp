@@ -35,6 +35,7 @@ int main(void) {
 	else {
 		cout << "원소 합이 " << target << "인 부분집합이 없습니다.\n";
 	}
+	return 0;
 }
 
 //함수 구현 
