@@ -81,6 +81,7 @@ int main(void) {
 		GetTime(timer, types[i]);
 		cout << endl;
 	}
+	return 0;
 }
 
 //함수 구현 
