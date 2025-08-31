@@ -18,6 +18,6 @@
   - [Ch5. Greedy Algorithm](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Data%20Structure%20and%20Algorithm%20with%20Cpp%20for%20Coding%20Test/Ch5-Greedy%20Algorithm)
   - [Ch6. Graph Algorithm1](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Data%20Structure%20and%20Algorithm%20with%20Cpp%20for%20Coding%20Test/Ch6-Graph%20Algorithm1)
   - [Ch7. Graph Algorithm2](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Data%20Structure%20and%20Algorithm%20with%20Cpp%20for%20Coding%20Test/Ch7-Graph%20Algorithm2)
-  - [Ch8. Dynamic Programming1]()
-  - [Ch9. Dynamic Programming2]()
+  - [Ch8. Dynamic Programming1](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Data%20Structure%20and%20Algorithm%20with%20Cpp%20for%20Coding%20Test/Ch8-Dynamic%20Programming1)
+  - [Ch9. Dynamic Programming2](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Data%20Structure%20and%20Algorithm%20with%20Cpp%20for%20Coding%20Test/Ch9-Dynamic%20Programming2)
 
