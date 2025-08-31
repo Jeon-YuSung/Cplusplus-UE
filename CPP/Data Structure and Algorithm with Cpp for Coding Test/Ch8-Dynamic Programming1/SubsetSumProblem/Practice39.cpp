@@ -1,4 +1,4 @@
-//연습문제39. 타뷸레이션을 이용해서 부분집합의 문제 하ㅏㅂ푸 ㄹ기
+//연습문제39. 타뷸레이션을 이용해서 부분집합의 문제 합 풀기
 #include <iostream>
 #include <algorithm>
 #include <vector>
