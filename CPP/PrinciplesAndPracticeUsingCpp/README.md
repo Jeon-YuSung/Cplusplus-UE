@@ -43,6 +43,7 @@
   - 부록 E. GUI 구현
 
 [비야네 스트롭스트룹 교수님 홈페이지](https://www.stroustrup.com/index.html)
+[std_lib_facilities.h code](https://www.stroustrup.com/Programming/std_lib_facilities.h)
 
 이 Repositories의 **Programming-Principles and Practice Using C++ 2nd Edition - Bjarne Stroustrup, 최광민 옮김 에이콘출판**을 기반으로 학습한 내용을 정리한 것입니다.
 원 저작권은 해당 출판사/저자에게 있습니다.
