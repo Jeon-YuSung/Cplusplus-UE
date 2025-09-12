@@ -2,7 +2,7 @@
 
 **<목차>**
 
-[1. C++에 왔으면 C++의 법을 따르자]()
+[1. C++에 왔으면 C++의 법을 따르자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch1)
 
 [2. 생성자, 소멸자, 대입 연산자]()
 
