@@ -1,6 +1,9 @@
 # Principles And Practice Using C++ Programming
 
 **<목차>**
+  + 0장. 독자에게 전하는 글
+  + 1장. Computer, Human, Programming
+
 ### 1부 기본 다지기
   + 2장. Hello, World!
   + 3장. Object, Type, Value
@@ -27,7 +30,7 @@
   - 20장. Container & Iterator
   - 21장. Algorithm & Map
 
-### 4부. 시야 넓히기 
+### 4부 시야 넓히기 
   - 22장. 프로그래밍의 이상과 역사
   - 23장. Text Control
   - 24장. 수치계산
@@ -35,7 +38,7 @@
   - 26장. Testing
   - 27장. C Language Programming
 
-### 5부. 부록 
+### 5부 부록 
   - 부록 A. 언어 요약
   - 부록 B. 표준 라이브러리 요약
   - 부록 C. Visual Studio Start
