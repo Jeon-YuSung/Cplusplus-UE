@@ -4,9 +4,9 @@
 
 [1. C++에 왔으면 C++의 법을 따르자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch1)
 
-[2. 생성자, 소멸자, 대입 연산자]()
+[2. 생성자, 소멸자, 대입 연산자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch2)
 
-[3. 자원 관리]()
+[3. 자원 관리](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3)
 
 [4.설계 및 선언]()
 
