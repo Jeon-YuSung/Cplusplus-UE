@@ -454,9 +454,85 @@ int main(void){
 위의 코드는 타입에 따라 달라지는 로그 기록을 노출하고 싶어, 자식 클래스의 생성자들로 하여금 필요한 로그 정보를 Transaction의 생성자로 넘기고, logTransaction을 비강사 함수로 변경하면 ButTransaction객체의 초기화도지 않은 멤버로 건드릴 위험이 없기에 안전해진다. 
 
 ```cpp
-class Trans것
+class Transaction{ //모든 거대에 대한 기본 클래스
+public:
+  explicit Transaction(const string* logInfo); // explicit 자신이 원하지 않은 형변환이 일어나지 않도록 제한 
+  void logTransaction(const string* logInfo) const; // 비가상 함수
+  ...
+};
 
-  
+Transaction::Transaction(const string* logInfo){ //기본 클래스 생성자의 구현
+  ...
+  logTransaction(logInfo);  //비가상 함수를 호출
+}
+
+class BuyTransaction: public Transaction
+private:
+  static string createLogString(parameters);
+public:
+   BuyTransaction(parameters):Transaction(createLogString(parameters)){....} //로그 정보를 기본 클래스 생성자로 넘김 
+  ....
+};
+
+```
+
+기본 클래스 부분이 생성될 때는 가상 함수를 호출한다 해도 기본 클래스의 울타리를 넘어 내려갈 수 없기 때문에, 필요한 초기화 정보를 파생 클래스 쪽에서 기븐 클래스 생성자로 '올려'주도록 만듦으로써 부족한 부분을 역으로 채울 수 있다. 
+
+  - **2-10 정리**
+    생성자/소멸자 안에서 가상 함수를 호출하지 말자, 가상 함수라고 해도 지금 실행중인 생성자나 소멸자에 해당되는 클래스의 자식 클래스쪽으로 내려가지 않기 때문이다.
+    
 -----------------------------------------------------------------
+
+## 대입 연산자는 *this 의 참조자를 반환 하게 하자
+
+C++의 대입 연산은 여러 개가 사슬처럼 엮일 수 있는 특징이 있다. 
+
+```cpp
+int x, y, z;
+x = y = z = 15;
+```
+
+대입 연산이 가진 또 하나의 특징은 **우측 연관(right-associative) 연산**이라는 것이다.
+```cpp
+x = y =( z= 15));
+```
+위의 코드에서, 15가 z에 대입되고, 그 대입 연산의 결과 (갱신된 z)는 y에 대입 되고, 또 y에 대한 대입 연산의 결과가 x에 대입된다. 
+대입 연산이 사슬처럼 엮일려면 대입 연산자가 좌변 인자에 대한 참조자를 반환 하도록 구현되어 있을 것인데, 이를 일종의 **관례(conveintion)** 이라고 함.
+
+```cpp
+class Widget{
+public:
+  ...
+  Widget& operator= (const Widget& rhs){ //반환 타입은 현재의 클래스에 대한 참조자 
+  ...
+  return *this; //좌변 객체(의 참조자)를 반환
+  }
+  ...
+};
+```
+
+**좌변 객체의 참조자를 반환하게 만들자**라는 규약은 단순 대입형 연산자 말고도 모든 형태의 대입 연산자에서 지켜져야 한다. 
+
+```cpp
+class Widget{
+public:
+  ...
+  Widget& operator+= (const Widget& rhs){ //+=, -=, *=등에도 동일한 규약이 적용
+  ...
+  return *this; //좌변 객체(의 참조자)를 반환
+  }
+
+  Widget& operator= (int rhs){ //대입 연산자의 매개변수 타입이 일반적이지 않을 경우에도 동일한 
+  ...
+  return *this;
+  }
+  ...
+
+};
+```
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+
 ## 2-12 객체의 모든 부분을 빠짐없이 복사하자
 -----------------------------------------------------------------
