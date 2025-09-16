@@ -38,4 +38,43 @@ cin은 cout 처럼 character input의 줄임말로, 표준 라이브러리에 �
 
 -------------------------------------------------------------------------
 
-## 3.2 변수 
+## 3.2 변수(Variable)
+입력 문자열을 저장하는 것처럼, 컴퓨터는 메모리에 데이터를 저장하지 않고는 일을 할 수 없음. <br>
+데이터를 저장하는 장소는 객체(Object)라고 하고, 그 객체에 접근하려면 이름이 필요함 <br> 
+이름이 있는(명명된) 객체를 변수(Variable)이고, 변수는 해당 객체에 넣을 수 있는 정보의 종류와 적용 가능한 연산의 종류를 지정하는 타입을 지님<br>
+(int type에 123을, string type에 "Hello"를, 아니면 *로 곱셈을 하거나 <=을 적용해서 문자열을 비교) <br>
+변수에 저장하는 데이터를 값(Value)라고 하고, 변수를 정의하는 구문은 말 그대로 **정의문**이라고 하고 정의문에서 초기 값을 지정할 수 있다 → (정의문에서 초기값을 지정 안해도 되는데, 지정하는게 권장 사항)
+
+```cpp
+string name = "Annemarie";
+int number_of_steps = 42;
+```
+<img src = https://github.com/Jeon-YuSung/Jeon-YuSung.github.io/blob/main/_img/OutPutBoxWithGPT.png width = "600" height = "600"/>
+
+이제 다음 코드를 보자
+
+```cpp
+string name = 42; // Error, 39는 문자열(string)아니다, 대신 "38", "4212321"같은 숫자를 문자형으로 바꾸는건 가능   
+int number_of_steps = "Annemarie"; // Annemarie는 정수 int가 아니라 문자라 에러가 발생함
+```
+
+컴파일러는 각 변수의 타입을 기억해뒀다가, 변수 정의에서 지정한 타입을 사용하는지 확인함 <br>
+C++에서 많은 종류의 타입을 제공하지만, 주로 다음 코드에 있는 타입들을 많이 사용.
+
+```cpp
+int num = 0; // int num (0);, int num; num 10; 이런식으로 초기화 가능, 4바이트
+float realNum = 4.231; // float은 실수 표현 단정도 부동 소수점이라고도 함 4바이트
+char singleChar = 'A' // 개별문자를 저장, 크기는 1바이트  'A'는 아스키 코드로 65
+double realNum2 = 6.1232135; // double은 배정도 부동소수점, 크기는 8바이트
+string name = "Vidan"; // 문자열을 저장하는 string, 크기는 객체가 차지하는 크기를 따라감
+bool tapOn = true; // 논리 변수를 저장함 크기는 1바이트 
+```
+이외에도 unsigned char, unsigned int, short, long, long long... 등 다양한 기본 자료 타입들이 제공됨. 
+
+-----------------------------------
+
+## 3.3 입력과 타입(Input and Type)
+입력 연산자 >>는 타입에 예민한 연산자로, 입력을 저장할 변수의 타입에 맞게 값을 읽어 들임. <br>
+
+
+-----------------------------------------------------------------
