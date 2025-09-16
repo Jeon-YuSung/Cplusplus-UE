@@ -89,7 +89,7 @@ NamedObject<int> no2(no1); //복사 생성자 호출
 ```
 위의 코드를 보면 no2에서 복사 생성자를 호출하기 때문에, 기본 복사 생성자가 호출되고 no1.nameValue(string 복사 생성자 호출) <br>
 no.obJectValue(int 비트 복사)는 각각 no2 멤버 변수에 복사 됨. <br>
-복사 대입 연산자도 동작 원리가 같지만 최종 결과 코드가 **Legal 하고 Resonalbe**해야 한다 operator=를 생성하지만 
+복사 대입 연산자도 동작 원리가 같지만 최종 결과 코드가 **Legal 하고 Resonable**해야 한다 operator=를 생성하지만 
 둘 중 하나라도 검사를 통과하지 못하면 컴파일러는 operator=의 자동생성을 거부함 <br> 
 다음 예제 코드를 보자, nameValue는 string에 대한 **참조자**이고 objectValue는 const T로 되어 있음.
 
