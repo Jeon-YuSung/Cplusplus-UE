@@ -13,7 +13,7 @@ char str[] = "ABCD"; //Nonconstant string + compact form
 const char str[] = {'a','b','c','d','\0'}; // Constant string
 const char str[] = "ABCD"; //Constant string + compact form 
 ```
-compact form에서 문자열을 큰따옴표를 감싸, 널 문자를 따로 입력하지않아도 알아서 마지막 요소에 널 문자가 들어가는 배여을 만들어줌 <br>
+compact form에서 문자열을 큰따옴표를 감싸, 널 문자를 따로 입력하지않아도 알아서 마지막 요소에 널 문자가 들어가는 배열을 만들어줌 <br>
 
 ```cpp
 char str[] = "ABCD";
@@ -70,6 +70,7 @@ strcpy(str1,str2); //str2 전체 복사
 strncpy(str1, str2, n); // str2의 일부 복사
 ```
 str1에 str2의 내용을 복사해서 붙이는 느낌임 
+
 [10-1. 문자열 복사하기](https://github.com/ysungJ/Cplusplus-UE/blob/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter10/10-1.cpp)
 
 null문자를 제외한 문자열의 문자 수는 C문자열의 크기로 strlen를 통해 길이를 구할 수 있음. <br>
