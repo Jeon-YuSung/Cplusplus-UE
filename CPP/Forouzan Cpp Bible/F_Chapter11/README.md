@@ -39,18 +39,20 @@
     [11-5. date클래스를 이용하여 사람의 생일 정보를 확인하는 프로그램](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/Aggregation-Date%20and%20Person)
 
   * 구성 (composition)
- 컨테이너의 존재에 따라서 내부에 있는 내용물의 존재가 달라지는 특별한 종류의 Association <br>
-aggregation와 composition의 관계를 정하는 것은 설계자의 주관 <br>
-composition 관계는 내용물을 데이터 멤버로 갖는 컨테이너 형태로 설계되고, 내부에 직접적으로 내용물을 가진다.
-그리고 컨테이너가 소멸할 때 내용물도 함께 소멸된다
+    
+    컨테이너의 존재에 따라서 내부에 있는 내용물의 존재가 달라지는 특별한 종류의 Association <br>
+    aggregation와 composition의 관계를 정하는 것은 설계자(프로그래머)의 주관 <br>
+    composition 관계는 내용물을 데이터 멤버로 갖는 컨테이너 형태로 설계되고, 내부에 직접적으로 내용물을 가진다.
+    그리고 컨테이너가 소멸할 때 내용물도 함께 소멸된다
 
 [11.6 노동자의 급여와 풀 네임을 알아보는 프로그램](https://github.com/ysungJ/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter11/Composition_Employee%20and%20Name)
 
- -------------------------------------
+ ------------------------------------------
+ 
  ### 11-3. 의존(dependency)
 dependency는 inheritance와 Association의 관계 보다는 약한 관계로 굉장히 다양한 정의가 있음 <br>
 의존 관계는 **사용 관계 (uses-a)** 라고 표현함 <br>
- 클래스A가 클래스B를 내부적으로 사용한다면, 클래스A가 클래스B를 의조하는 것임. <br>
+ 클래스A가 클래스B를 내부적으로 사용한다면, 클래스A가 클래스B를 의존하는 것임. <br>
  즉 클래스B가 없으면 A가 정상적으로 작동하지 않음 
  
 1. A의 멤버 함수에서 매개변수로 B 자료형을 사용하는 경우 <br>
