@@ -11,8 +11,8 @@
   - [3.13 자원 관리에는 객체가 그만!](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3/E_Ch3-13)
   - [3-14 자원 관리 클래스의 복사 동작에 대해 진지하게 고찰하자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3/E_Ch3-14)
   - [3-15 자원 관리 클래스에서 관리되는 자원은 외부에서 접근할 수 있도록  하자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3/E_Ch3-15)
-  - 3-16 new/delete를 사용할 때는 형태를 반드시 맞추자.
-  - 3-17 new 생성한 객체를 smart pointer에 저장하는 코드는 별도의 한 문장으로 만들자
+  - [3-16 new/delete를 사용할 때는 형태를 반드시 맞추자.](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3/E_Ch3-16)
+  - [3-17 new 생성한 객체를 smart pointer에 저장하는 코드는 별도의 한 문장으로 만들자](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/EffectiveCpp/E_Ch3/E_Ch3-17)
 
 -----------------------------------------------------------------------------------
 
