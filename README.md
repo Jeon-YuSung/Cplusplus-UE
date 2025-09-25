@@ -7,7 +7,7 @@
 
 ### A. C++ 참고한 서적 또는 사이트 
 
- * A-1.[Forouzan C++ Bible - Behrpiz A.Forozan, Richard F.Gillberg 저, 윤인성 옮김](https://product.kyobobook.co.kr/detail/S000001743779)
+ * A-1. [Forouzan C++ Bible - Behrpiz A.Forozan, Richard F.Gillberg 저, 윤인성 옮김](https://product.kyobobook.co.kr/detail/S000001743779)
  * A-2. [A Tour of C++ Third Edition - 비야네 스트롭스트룹](https://product.kyobobook.co.kr/detail/S000213611373)
  * A-3. [Programming: Principles and Practice Using C++(한국어판) - 비야네 스트롭스트룹](https://product.kyobobook.co.kr/detail/S000000935796)
  * A-4. [Effective C++ - 스콧 마이어스](https://product.kyobobook.co.kr/detail/S000001962302)
@@ -20,6 +20,8 @@
   * B-1. Complete C++20 Visual and Practical Course: Zero to Mastery - Rahmat M
   * B-2. Learn Advanced Modern C++ (Take your knowledge of C++ to the next level!) - James Raynard
   * B-3. Learn C++ for Game Development - Stephen Ulibarri
+  * B-4. Mastering Data Structures & Algorithms using C and C++ - Abdul Bari
+    
 -------------------------------------------------------------------------
 
 ## 언리얼 엔진 
@@ -33,3 +35,4 @@
  * D-1. Unreal Engine 5: The Complete Beginner’s Course - David Nixon
  * D-2. Unreal Engine 5 (UE5): The Complete Beginner's Course - Pixel Helmet
  * D-3. 한글자막 Unreal Engine 5 C++ 개발자: C++ 학습하고 비디오 게임 제작하기 - Ben Tristem, GameDev.tv Team, Stephen Ulibarri, 웅진 씽크빅 글로벌
+ * D-4. Unreal Engine 5 - Open World Landscapes - Greg Wondra
