@@ -21,6 +21,7 @@
   * B-2. Learn Advanced Modern C++ (Take your knowledge of C++ to the next level!) - James Raynard
   * B-3. Learn C++ for Game Development - Stephen Ulibarri
   * B-4. Mastering Data Structures & Algorithms using C and C++ - Abdul Bari
+  * B-5. The C++20 Masterclass : From Fundamentals to Advanced - Daniel Gakwaya
     
 -------------------------------------------------------------------------
 
@@ -35,4 +36,7 @@
  * D-1. Unreal Engine 5: The Complete Beginner’s Course - David Nixon
  * D-2. Unreal Engine 5 (UE5): The Complete Beginner's Course - Pixel Helmet
  * D-3. 한글자막 Unreal Engine 5 C++ 개발자: C++ 학습하고 비디오 게임 제작하기 - Ben Tristem, GameDev.tv Team, Stephen Ulibarri, 웅진 씽크빅 글로벌
- * D-4. Unreal Engine 5 - Open World Landscapes - Greg Wondra
+ * D-4. Unreal Engine 5 : All in one UE5 master Blueprint - Unreal magic
+ * D-5. Unreal Engine 5 Dedicated Servers with AWS and GameLift - Stephen Ulibarri
+ * D-6. Unreal Engine 5: One Course Solution For Material - Vince Peterlli
+ * D-7. Unreal Engine 5: One Course Solution For Niagara VFX - Vince Peterlli
