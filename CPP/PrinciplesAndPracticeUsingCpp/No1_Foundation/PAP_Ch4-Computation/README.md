@@ -326,7 +326,7 @@ switch(a){
 ```
 이런식으로 case을 한동작으로 지정해줄 수 있다. 
 
-[if문과 switch문 코드와 설명 참](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter4)
+[if문과 switch문 코드와 설명 참고](https://github.com/Jeon-YuSung/Cplusplus-UE/tree/main/CPP/Forouzan%20Cpp%20Bible/F_Chapter4)
 
 **반복(repetition or iteration)** <br>
 어떤 일을 여러번 수행하는 동작 → 반복(repetition) <br>
