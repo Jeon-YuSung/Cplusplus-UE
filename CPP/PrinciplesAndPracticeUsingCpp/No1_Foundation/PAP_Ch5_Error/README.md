@@ -245,7 +245,32 @@ int area1 = area(x,y);
 오류를 감지했을 때, error함수로 통해 처리한다. 이 함수는 std_lib_facilities.h에 포함된 함수로 기본적으로 시스템 오류 메시지와 인자로 전달된 문자열을 함께 출력하고나서 프로그램을 종료하는 방법이다. 
 참고로 C++자체에서는 error함수가 **없어** error를 통한 예외처리가 불가능하니, runtime_error 클래스 같은걸 사용해야한다 (편의상 책에 있는 건 대부분 std_lib_facilities.h에 포함되어 있을거다, 그리고 C++11을 요구하니 C++26까지 나온 시점에서 다를 수 있다.) <br>
 **std::exception나 try-catch를 통한 throw 키워드를 입력해서 예외처리를 해야한다. 그리고, stdexcept 클래스안에 있는 domain_error, runtime_error등.. 다양한 클래스를 통해서 예외를 처리해야한다.** (5.6항목을 참고) <br>
-즉, std_lib_facilities.h에 의존하지말고, 직접 <iostream>이나 <string>, <vector>를 선언해서 포함시시키고 error가 아닌 다른걸로 예외처리 해보자 
+즉, std_lib_facilities.h에 의존하지말고, 직접 <iostream>이나 <string>, <vector>를 선언해서 포함시시키고 error가 아닌 다른걸로 예외처리 해보자. <br>
+밑의 코드는  std_lib_facilities.h에 정의된 error 함수의 코드이다. 
+```cpp
+struct Exit : runtime_error {
+	Exit(): runtime_error("Exit") {}
+};
+ 
+// error() simply disguises throws:
+inline void error(const string& s)
+{
+	throw runtime_error(s);
+}
+ 
+inline void error(const string& s, const string& s2)
+{
+	error(s+s2);
+}
+ 
+inline void error(const string& s, int i)
+{
+	ostringstream os;
+	os << s <<": " << i;
+	error(os.str());
+}
+```
+
 
 2번째 방법인 **호출되는 쪽(callee)에서의 오류 처리**에 대해 알아보자 
 framed_area안에서 argument가 올바른지 확인해서 처리하는 방법이다. 
@@ -328,6 +353,226 @@ int f(int x, int y, int z){
 ----------------------------------------------------------------------------------------
 
 ## 5-6 예외(exception)
+오류를 처리하는 매커니즘인 예외를 지원한다. <br>
+기본적인 원리(아이디어)는 (호출되는 함수에서 수행해야 하는) 오류 감지와 (호출하는 함수쪽에서 수행해야 하는) 오류 처리를 분리함과 동시에 감지된 오류를 무시할 수 없게 하는 데에 있다. 즉, 예외을 잘 사용한다면 오류가처리가 쉬운일은 아니지만 한결 수월해진다. <br>
+Exception의 기본 아이디어는 함수가 처리할 수 없는 오류가 발생하면 일반적인 return을 하는 대신 오류를 나타내는 예외를 throw한다. 문제의 함수를 직간접적으로 호출한 모든 함수에서 Exception를 catch해서 호출된 코드가 throw를 사용했을 때, 무슨 일을 할지 정할 수 있다. <br>
+보통 try- catch문을 사용해서 잡는다. <br>
+그리고, 호출하는 쪽 어디서도 예외를 잡지 않으면 프로그램을 종료한다. <br>
+이제 잘못된 인자를 사용할 때 어찌해야할지 알아보자.
+
+**잘못된 인자** 
+
+예외를 이용해서 다음 코드를 수정해보자.
+
+```cpp
+class Bad_area {}; //area()에서 오류 보고에 사용할 타입.
+
+int area(int len, int wid){
+   if(len <= 0 || wid <= 0){
+      throw Bad_area{};
+   }
+   return len * wid;
+}
+```
+argument에 문제가 없으면 넓이로 반환할꺼고, 그렇지 않으면 어딘선가 cathc로 적절한 조치를 해주기 바라며 throw로 area()를 종료한다. 
+catch에서 area()가 던진 예외임을 알수 있도록, area함수에서 유일한 무언가를 throw할 목적으로 Bad_area라는 새로운 타입을 정의했다. 
+즉, 기본 값으로 bad_area 타입의 객체를 만든다라는 뜻으로, throw Bad_area()는 "Bad_area 타입의 객체를 만들어 throw"하라는 의미이다. 
+이제 메인 함수 코드를 보자 
+
+```cpp
+int main(void){
+try{
+   int x = -1;
+   int y = 2;
+   int z = 4;
+   int area1 = area(x,y);
+   int area2 = framed_area(1,z);
+   int area3 = framed_area(y,z);
+   double ratio = double(area1)/area3;
+} catch(Bad_area){
+   cout << "area함수에 잘못된 인자 전달됨\n";   
+}
+   return 0;
+}
+```
+main함수와 framed_area의 호출을 비롯한 모든 area에 대한 호출을 처리할 수 있따는 점에서 주목하자, 그리고 오류 처리와 오류 감지 부분이 얼마나 명확하게 분리 됐는지 주목하자. 메인 함수는 어떤 함수가  throw Bad_area{};를 실행했는지 모르고, area도 자신이 throw한 Bad_area 예외를 어떤 함수가 catch하는지 알지 못한다. <br>
+이러한 분리는 많은 라이브러리를 이용해서 작성한 대규모 프로그램에서 매우 중요하다. 응용 프로그램과 라이브러리 양쪽의 모든 코드를 수정하고 싶지 않기 때문에, 필요한 곳마다 코드를 삽입하는 방식으로 오류를 처리할 수 없다. 
+
+**구간 오류** 
+
+ 대부분의 실제 코드는 데이터 집합을 처리한다. 즉, 처리할 데이터 요소를 포함하는 다양한 종류의 표와 목록 등을 이용하는데, C++에서 이러한 데이터 모음을 **컨테이너(Container)** 라고 한다. vector, list, array, map... iterator등이 있다. <br>
+vector는 가장 일반적이고 유용한 표준 라이브러리 컨테이너이고 이 vector를 이용해서 구간 오류에대해 알아보자. <br>
+vector는 여러 개의 요소를 저장하며 vector의 size 멤버 함수를 호출해 요소의 개수를 알 수 있다. 그런데 유효한 구간인 0:v.seze() 밖의 인덱스로 요소에 접근하면 무슨일이 벌어질까? <br>
+low:high는 low에서 high-1까지를 가리키는 일반적인 표기법이다. 즉 low는 포함하지만 high는 포함하지 않는 구간을 말한다. <br>
+자, 0:v.seze()라는 v의 인덱스 구간을 알고 있다면, 그 안에서 인덱스를 사용하면 되지 않을까? 근데 가끔은 하기 어려운 경우가 있다. <br>
+다음 코드를 보자.
+
+```cpp
+std::vector<int> v; //int자료형을 포함하는 vector v
+for(int i; std::cin>>i;) v.push_back(i);
+for(int i = 0; i <= v.size(); ++i){
+   std:: cout << "v[" << i << "] == " << v[i] << std::endl;
+}
+```
+일반적이진 않은 오류지만, 만들 수 있는 오류이다. 위의 코드 문제는 v\[i\]에 접근할 때, i가 항상 구간 안에 있는지 확인하려고 0과 size함수를 이용한 부분에서 찾을 수 있다. 자 여기서 for문을 보자, 루프의 종료 조건에서 i<=v.size() 대신 i<v.size()라고 수정해줘야한다. <br> 
+이러지 않으면, -1까지 접근하는 것이 아닌 하나 더 접근하게 된다. 즉, 입력받은 정수는 5개인데, 여섯 번 접근을 시도하는 경우가 생겨난다. <br>
+v\[5]에 접근할 때 실제로는 vector의 끝보다 하나 더 뒤에 접근하게 된다. 이러한 오류를 **하나 차이 오류(off-by-one error), 구간 오류(range error), 경계 오류(bound error)** 라고 한다. <br>
+구간 for문을 루프를 표현하면 되지 않을까? 루프의 끝에서 잘못된 인덱스를 사용할 수 없으니깐, 하지만 각 요소의 값뿐만 아니라 인덱스의 값도 필요하기 때문에 구간 for에서 인덱스의 값을 얻으려면 별도의 작업이 필요하다. 
+```cpp
+vector<int> v(5);
+int x = v[5];
+```
+이 코드 또한 루프에서와 동일한 구간 오류를 일으킨다. <br>
+그럼 구간 오류가 발생하면 무슨일이 일어날까? vector의 첨자 연산은 vector의 크기를 알고 있으므로 인덱스가 유효한지 확인할 수 있다. 그리고 확인 결과 문제가 있다면, out_of_range 타입의 예외를 던진다. <br>
+즉, 해당 예외를 잡는 프로그램에 위와 같이 하나 차이 오류를 초함한 코드가 있다면, 적어도 적당한 오류 메시지를 출력한다는 사실은 보장할 수 있다. 
+```cpp
+int main(){
+   try{
+   vector<int> v;
+   for(int x; cin>>x;)
+   v.push_back(x);
+   for(int i = 0; i <= v.size(); ++i)
+      std:: cout << "v[" << i << "] == " << v[i] << std::endl;
+   } catch(out_of_range) {
+   cerr << "이런! 구간 오류 발생\n";
+   return 1;
+   } catch(...){
+      cerr<< "예외 : 뭔가 잘못됨 \n";
+      return 2; 
+   }
+}
+```
+구간 오류도 잘못된 인자 오류의 매우 특별한 경우에 속한다. <br>
+vector의 인덱스를 항상 확인한다는 보장이 없기에 vector의 첨자 연산에서 확인 작업을 대신해주길 바란다. <br>
+vector의 첨자 연산자 (vector::operator[])에서 오류를 찾아 예외를 던진다.
+
+**잘못된 입력**
+
+잘못된 입력 처리방법은 10-6에서 더 자세히 알아보자. 그러나, 여기서 알아야하는 것은 잘못된 입력을 처리하는 방법도 인자 오류나 구간 오류를 처리할 때 사용한 기법과 언어의 기능을 동일하게 활용한다. 그리고 여기서, 입력 연산이 성공했을 경우에 어떻게 할지에 대해 알아보자. 
+```cpp
+double d = 0;
+cin >> d;
+
+if(cin){
+   //모두 정상, 다음 입력 가능 
+} else{
+   // 마지막 입력 실패, 다른 조치 해야함 
+}
+```
+위의 코드처럼 부동소수점 숫자를 입력 받는 경우를 생각해보자. <br>
+입력 연산이 실패하는데 여러 이유가 있지만, >>가 읽을 수 있는 double이 없을 경우일 것이다. 그리고 개발 초기에는 오류를 찾았다는 사실을 알리고 싶지만, 어떤 조치를 취해야 좋을지 알 수 없는 경우가 있다. 이 때는, 오류를 보고하고 프로그램을 종료한다. 
+```cpp
+double some_function(){
+   double d = 0;
+   cin >> d;
+
+   if(!cin){
+      //에러 처리, some_function함수가 double를 읽지 못함
+      //필요한 작업을 수행
+   }
+} 
+```
+위의 코드는 cin이 앞서 수행한 연산이 실패했음을 의미한다. (책에는 error 함수 처리를 통해 사용자에게 오류를 알리고 프로그램을 종료함) 
+프로그램을 종료하기 전에 메시지를 읽을 수 있게 충분한 시간 동안 창을 열어 놓는 등의 부수적인 조치를 취할 수도 있다. <br>
+vector가 던지는 out_of_range등의 몇 가지 예외를 정의하는데, 오류를 처리할 때 필요한 문자열(오류 메시지)을 포함한다는 점에서 우리의 필요에 적합한 runtime_error도 제공한다. <br>
+혹은 error함수를 간단히 직접 정의해서 사용할 수 있다. 
+```cpp
+void error(string s){
+   throw runtime_error(s);
+}
+```
+ runtime_error를 처리하고 싶으면 예외를 잡으면 되고, 간단한 프로그램이라면 main에서 잡아도 된다. 
+
+```cpp
+int main(void){
+   try{
+   // 프로그램 코드... 작성
+   return 0;
+   }
+   catch(runtime_error& e){
+      cerr<<"runtime error : " << e.what() << '\n;
+      keep_window_open();
+      return 1;
+   }
+   return 0;
+}
+```
+e.what()함수는 runtime_error로부터 오류 메시지를 가져온다. <br>
+runtime_error& e에서의 &는 **예외를 참조로 전달하라** 의미로 8장에서 학습할 예정이다. <br>
+그리고 cout대신에 cerr을 사용한다. <br>
+cerr는 오류에 적합하게 최적화할 수 있고, 오류에 관련된 내용을 출력하는 사실을 문서화하는 효과도 있기에 오류 메시지에는 cerr를 사용한다. 
+
+참고로 std_lib_facilities.h 헤더파일에 keep_window_open함수가 정의되어 있다. 
+```cpp
+inline void keep_window_open()
+{
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+ 
+	cout << "Please enter a character to exit\n";
+	char ch;
+	cin >> ch;
+	return;
+}
+ 
+inline void keep_window_open(string s)
+{
+	if (s == "") {
+		keep_window_open();
+		return;
+	}
+ 
+	cin.clear();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+ 
+	for (;;) {
+		cout << "Please enter " << s << " to exit\n";
+		string ss;
+		while (cin >> ss && ss!=s)
+			cout << "Please enter " << s << " to exit\n";
+		return;
+	}
+}
+```
+
+다시 본문으로 돌아가서, out_of_range는 runtime_error가 아니므로, runtime_error만 잡아서는 vector를 비롯한 STL 잘 못 사용했을 때 발생한 out_of_range를 처리할 수 없다. 그러나 out_of_range와 runtime_error 모두 예외에 속하기에 exception을 하면 둘 다 처리할 수 있다. 
+```cpp
+int main(){
+   try{
+   //프로그램 코드
+   return 0;
+   }catch(exception& e){
+      cerr << "오류 : " << e.what() << "\n";
+      keep_window_open();
+      return 1;
+   } catch(...){
+      cerr<<"알수 없는 예외 \n";
+      keep_window_open();
+      return 2;
+   }
+   return 0;
+}
+
+```
+
+catch(...)를 추가해서 다른 모든 타입의 예외를 처리했고, out_of_range와 runtime_error의 공통 기반(supertype)인 exception 타입 하나로 두 예외를 모두 처리하였다. <br>
+
+**축소 오류** 
+
+특정 변수에 저장하기에 너무 큰 값을 대입하면 암묵적인 절삭이 일어나는 성가신 오류를 앞에서 알아봤다. 
+```cpp
+int x = 2.9;
+char c = 1066;
+```
+이러한 경우 또한, 값의 변경을 초래하는 대입이나 초기화를 확인하고 runtime_error를 던질 수 있다. 
+```cpp
+int x1= narrow_cast<int>(2.9); //예외 던짐
+int x2= narrow_cast<int>(3.0); // ok
+char c1= narrow_cast<char>(1066); //예외 던짐
+char c2= narrow_cast<char>(85); //ok
+```
+\<...>는 값이 아닌 타입을 지정할 때 사용하는 **템플릿 인자(template argument)** 라고 한다. 값을 변환할 때 크기에 맞는다는 보장을 할 수 없는 경우 narrow_cast를 사용하는데, 이 또한 std_lib_facilities.h에 정의되어 있다. <br>
+캐스트는 '타입 변환'을 의미하고, 피연산자를 변경하지 않는다. 단지 피연산자의 값에 해당하는 새로운 값을 만들어낸다 
 
 ----------------------------------------------------------------------------------------
 
