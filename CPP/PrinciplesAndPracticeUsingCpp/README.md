@@ -51,3 +51,10 @@
 
 이 Repositories는 **Programming-Principles and Practice Using C++ 2nd Edition - Bjarne Stroustrup, 최광민 옮김 에이콘출판**을 기반으로 학습한 내용을 정리한 것입니다.
 원 저작권은 해당 출판사/저자에게 있습니다.
+
+--------------------------------------------------------------------------------
+# 참고 사항
+## std_lib_facilities.h
+ 이 책은 C++언어를 단계별로 배우는 것이 아니라 C++의 문법을 적당히 이해하고, 프로그램 자체를 잘 짜는 방법에 치중되어 있기에 std_lib_facilities.h파일을 사용해서 더 간편히 짤 수 있게 도와준다. 예를 들어 error함수는 c++에서 제공해주지않지만 이 헤더 파일에 구현되어 있어 에러 메시지를 출력해주고, keep_window_open라는 함수를 통해 입력이 없어도 화면 창이 종료되지 않도록 도와준다. <br> 
+ 즉, 기초 선언 iostream, string, vector, cmath등...을 선언해주지 않아도 혹은 throw runtime_error를 안해줘도 쉽게 프로그래밍을 할 수 있도록 도와준다. <br>
+ 더 자세한 내용을 알고 싶다면 구글에 std_lib_facilities.h를 검색해보자. 
