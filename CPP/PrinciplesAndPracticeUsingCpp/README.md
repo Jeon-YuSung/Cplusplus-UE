@@ -1,5 +1,7 @@
 # Principles And Practice Using C++ Programming
 
+이 책은 C++문법 책이 아니라, C++를 도구로 사용하면서 C++의 강점을 알려주고, C++아닌 어떤 언어를 사용하든 대부분의 엔지니어링 방식으로 문제에 접근하는 방식인 책이다. 그러니 컴파일러 설계나 다른 기타 CS지식이 필요할 수 있다.
+
 **<목차>**
   + 0장. 독자에게 전하는 글
   + 1장. Computer, Human, Programming
