@@ -135,7 +135,7 @@ int main() {
 
 이제 왜 class가 **사용자 정의 타입**인지를 알아보자. <br>
 일단 C++에서 type이 뭘까? → 데이터의 형식과 동작을 정의한 것 <br> 
-그리고 예약어로 int, doulbe, char 등이 C++표쥰이 미리 정의한 기본 타입(Built-in type)이다. <br>
+그리고 예약어로 int, doulbe, char 등이 C++표준이 미리 정의한 기본 타입(Built-in type)이다. <br>
 
 ```cpp
 class Point {
