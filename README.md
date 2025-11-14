@@ -14,7 +14,10 @@
  * A-5. [모두의 코드 C++ (씹어먹는 C++)](https://modoocode.com/)
  * A-6. [CppReference](https://en.cppreference.com/w/)
  * A-7. [코딩테스트를 위한 자료구조와 알고리즘 with C++ - 존캐리, 셰리안 도시, 파야스 라잔 지음, 황선규 옮김](https://product.kyobobook.co.kr/detail/S000001834528)
-
+ * A-8. [Optimized C++ - 커트 건서로스](https://product.kyobobook.co.kr/detail/S000001810167)
+ * A-9. [Effective Modern C++ - 스콧 마이어스](https://product.kyobobook.co.kr/detail/S000001033019)
+ * A-10. [C++ Templates - 다비드 반데부르드, 니콜라이 요수티스, 더글라스 그레고르 지](https://product.kyobobook.co.kr/detail/S000001804733)
+   
 ### B. 참고한 유데미 강의 (추가 예정)
 
   * B-1. Complete C++20 Visual and Practical Course: Zero to Mastery - Rahmat M
@@ -27,10 +30,12 @@
 
 ## 언리얼 엔진 
 
- ### C. 참고한 서적 
+### C. 참고한 서적 
+
  * C-1. [C++ 스크립트를 활용한 언리얼 엔진5 게임 개발 - 젠유 조지리 지음, 진석준 옮김, 에이콘 출판](https://product.kyobobook.co.kr/detail/S000214769623)
-*  C-2. [언리얼 엔진5으로 개발하는 멀티플레이어 게임 - 마르코 세치 지음, 이지성-송정은 번역, 에이콘 출판](https://product.kyobobook.co.kr/detail/S000215817133)
-*  C-3. [영상 제작자를 위한 언리얼 엔진 5 입문(언리얼 엔진의 기초부터 시네마틱 영상 제작까지) - 김세윤 지음, 루비페이퍼 출판](https://product.kyobobook.co.kr/detail/S000210534572)
+ * C-2. [언리얼 엔진5으로 개발하는 멀티플레이어 게임 - 마르코 세치 지음, 이지성-송정은 번역, 에이콘 출판](https://product.kyobobook.co.kr/detail/S000215817133)
+ * C-3. [영상 제작자를 위한 언리얼 엔진 5 입문(언리얼 엔진의 기초부터 시네마틱 영상 제작까지) - 김세윤 지음, 루비페이퍼 출판](https://product.kyobobook.co.kr/detail/S000210534572)
+ * C-4. [언리얼 엔진으로 배우는 게임 디자인 패턴](https://product.kyobobook.co.kr/detail/S000218278062)
 
 ### D. 참고한 유데미 강의 (추가 예정)
  * D-1. Unreal Engine 5: The Complete Beginner’s Course - David Nixon
