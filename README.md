@@ -16,7 +16,7 @@
  * A-7. [코딩테스트를 위한 자료구조와 알고리즘 with C++ - 존캐리, 셰리안 도시, 파야스 라잔 지음, 황선규 옮김](https://product.kyobobook.co.kr/detail/S000001834528)
  * A-8. [Optimized C++ - 커트 건서로스](https://product.kyobobook.co.kr/detail/S000001810167)
  * A-9. [Effective Modern C++ - 스콧 마이어스](https://product.kyobobook.co.kr/detail/S000001033019)
- * A-10. [C++ Templates - 다비드 반데부르드, 니콜라이 요수티스, 더글라스 그레고르 지](https://product.kyobobook.co.kr/detail/S000001804733)
+ * A-10. [C++ Templates - 다비드 반데부르드, 니콜라이 요수티스, 더글라스 그레고르](https://product.kyobobook.co.kr/detail/S000001804733)
    
 ### B. 참고한 유데미 강의 (추가 예정)
 
