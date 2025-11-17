@@ -11,7 +11,7 @@ C++ 공부
  * A-6. [CppReference](https://en.cppreference.com/w/) - Cpp 레퍼런스 사이트다, 영어 사이트로, 아니면 깃허브에 가이드라인이 있을거다 (영어도 있고 한글화작업한 레지도 있음) 필요할 때마다 봐라. MS C++ 문서와 함께 보는걸 추천한다.
  * A-7. [코딩테스트를 위한 자료구조와 알고리즘 with C++ - 존캐리, 셰리안 도시, 파야스 라잔 지음, 황선규 옮김](https://product.kyobobook.co.kr/detail/S000001834528) - 코딩테스트를 위한 자료구조 개념과 알고리즘을 설명하는 책이며, STL를 사용하면서 만든다. 코딩테스트보다는 구현과 이해쪽에 가깝다고 볼 수 있다. 난이도 초~중급
  * A-8. [Optimized C++ - 커트 건서로스](https://product.kyobobook.co.kr/detail/S000001810167) - 
- * A-9. [Beautiful C++ - 가이 데이비드슨, 케이트 그레고](https://product.kyobobook.co.kr/detail/S000213741864) - 
+ * A-9. [Beautiful C++ - 가이 데이비드슨, 케이트 그레고리](https://product.kyobobook.co.kr/detail/S000213741864) - 
  * A-10. [전문가를 위한 C++ - 마크 그레고리, 남기혁 번역](https://product.kyobobook.co.kr/detail/S000201305611) - 고급... 읽다가 4장쯤에서 포기했다. 추천하지만 많이 어려운 책이다.
  
 ## B. 참고한 유데미 강의 (추가 예정)
